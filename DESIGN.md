@@ -6,7 +6,9 @@ Veyra should feel calm, capable, warm, and editorial rather than game-like or da
 
 The visual language must be original. Do not copy a competitor’s layout, illustrations, iconography, interaction model, or wording.
 
-This design serves a commercial SaaS, not a hackathon demo, covering eight planned tracks across seven target languages for relocation, travel, work, and everyday communication. It must be feasible for an initial delivery team in which one founder may handle both frontend and backend. The founders jointly own the project, but ownership percentages remain unresolved. “Veyra” is a working name pending clearance. No customers, payments, translations, linguistic approvals, or audio are verified; the interface must not imply otherwise.
+This design serves a commercial SaaS, not a hackathon demo, covering eight planned tracks across seven target languages for relocation, travel, work, and everyday communication. It must be feasible for an initial delivery team in which one founder plans to handle both frontend and backend. The founders jointly own the project, but ownership percentages remain unresolved. “Veyra” is a working name pending clearance. No customers, payments, translations, linguistic approvals, or audio are verified; the interface must not imply otherwise.
+
+The intended audience is international and aged 13+. Teenagers aged 13–17 and adults aged 18+ must both be able to understand and use the product without the interface becoming childish or relying on adult-only assumptions. International targeting does not imply legal availability in every country.
 
 ## 2. Experience principles
 
@@ -16,6 +18,18 @@ This design serves a commercial SaaS, not a hackathon demo, covering eight plann
 4. **Visible truth:** Clearly label locked, unavailable, unreviewed, syncing, and incomplete states.
 5. **Calm progress:** Encourage continuity without shame, artificial urgency, streak loss, or confetti overload.
 6. **Accessible by default:** Keyboard, touch, screen reader, zoom/reflow, contrast, captions/transcripts, and reduced motion are first-order requirements.
+7. **Trust without theatre:** Pricing, business identity, policies, consent, and data controls are specific and accessible; decorative trust badges, fake social proof, and unsupported metrics are prohibited.
+
+### Prohibited generic patterns
+
+- No generic gradient washes, glowing mesh backgrounds, or gradient text used as a substitute for hierarchy or identity. A restrained gradient may be approved only when it serves a specific original brand purpose and passes contrast review.
+- No vague hero claims such as “master any language” or unsupported speed, fluency, popularity, or outcome promises. Hero copy must name the practical user, situation, and product value concretely.
+- No invented testimonials, logos, ratings, download counts, learner counts, success rates, “trusted by” sections, live counters, or fabricated activity.
+- No excessive entrance animation, parallax, looping decoration, cursor effects, or motion that delays reading or action.
+- No gratuitous pill-shaped controls. Pills are reserved for compact filters, tags, or segmented choices whose semantics require them; primary actions use a deliberate shape system.
+- No emoji as interface icons. Use accessible text or one coherent lawful icon system; emoji may appear only as actual authored content where culturally and semantically appropriate.
+- No unnecessary “AI-powered,” sparkle, robot, chatbot, or generative branding. AI is not part of the approved MVP promise and must not be implied.
+- No default framework logo or favicon at launch. Use an original, lawful, recognizable favicon tied to the cleared brand and test it at small sizes and relevant themes.
 
 ## 3. Visual foundation
 
@@ -38,7 +52,7 @@ Final values require contrast testing in implemented components. Proposed starti
 | `danger-700` | `#A23832` | Errors/destructive actions |
 | `success-700` | `#2C6A4F` | Confirmed success states |
 
-Coral is not the default button color and is never the only carrier of meaning. Avoid large gradients; subtle tonal surfaces are preferable. Dark mode is not in initial scope, so do not ship an untested automatic inversion.
+Coral is not the default button color and is never the only carrier of meaning. Avoid generic or large gradients; flat and subtle tonal surfaces are preferable. Dark mode is not in initial scope, so do not ship an untested automatic inversion.
 
 ### Typography
 
@@ -79,12 +93,13 @@ Breakpoints should follow content failure rather than device brand categories.
 
 ### 5.1 Public landing
 
-- Clear statement about practical communication and intended situations.
+- Specific hero statement naming practical communication, intended users/situations, and the actual available action; no vague transformation promise.
 - Honest example or approved preview content only; no invented testimonials, learner counts, ratings, or outcomes.
 - Supported-track overview that distinguishes planned from available.
 - Pricing hypothesis displayed only when an actual offer is ready and terms are known.
 - Primary action to explore a free lesson or create an account; secondary action to understand the method.
 - Footer for legal, accessibility, support, and working-brand information as available.
+- On launch, verified business/support details, applicable policy links, approved custom-domain identity, and the production favicon are consistent across metadata and visible trust surfaces.
 
 ### 5.2 Authentication
 
@@ -95,10 +110,13 @@ Breakpoints should follow content failure rather than device brand categories.
 
 ### 5.3 Onboarding and track selection
 
-- Short value framing, then a searchable/scannable set of eight tracks.
+- Short, age-appropriate value framing, then separate controls for available interface language, instructional language, and a searchable/scannable set of eight tracks.
+- An accessible language selector is available before account creation and later from persistent settings/navigation. Changing interface language is easy, reversible, and does not change the instructional language or target track without explicit confirmation.
+- A supported browser language may appear as a dismissible suggestion; never force a language from browser settings, country, flag, IP address, or device region.
 - Each track card names source and target explicitly and identifies regional variants (`pt-BR`, `pt-PT`).
 - Track status is visible: available, coming later, or unavailable—not simulated content.
 - Selection is reversible in settings and does not erase prior progress.
+- The 13+ eligibility and consent experience uses approved plain language, collects minimal information, distinguishes teen and adult paths only where verified requirements need it, and does not claim universal country eligibility.
 
 ### 5.4 Home / learning path
 
@@ -150,6 +168,8 @@ Breakpoints should follow content failure rather than device brand categories.
 - Checkout pending, verification pending, active, failed, canceled, refunded/disputed, and unknown states remain distinct.
 - Never show “paid” based only on a redirect.
 - Account profile, preferences, security/session controls as supported, privacy/export/deletion actions, and sign out.
+- Consent and communication preferences distinguish essential service processing from optional analytics/marketing choices without preselected optional consent or obstruction.
+- Account deletion explains scope, confirmation, expected processing, verified retention exceptions, and status; destructive actions require authorization and an accessible confirmation pattern.
 
 ### 5.11 Operational screens
 
@@ -189,6 +209,8 @@ Breakpoints should follow content failure rather than device brand categories.
 - Audio has equivalent displayed phrase/transcript content; listening exercises have an accessible alternative without falsely awarding listening completion.
 - Screen-reader spot checks on authentication, track selection, lesson, exercise, review, and billing.
 - No content flashes above safe thresholds; reduced-motion preferences honored.
+- Language selectors, age/eligibility states, consent, and preference switching are fully keyboard operable with visible focus, sufficient contrast, programmatic labels, meaningful error/status announcements, and no flag-only language labels.
+- Images that convey learning or safety meaning have useful alternative text; decorative imagery is correctly ignored. Translated interface resources preserve equivalent accessible names and instructions.
 
 Automated checks support but do not replace manual accessibility testing.
 
@@ -199,7 +221,21 @@ Automated checks support but do not replace manual accessibility testing.
 - Avoid infantilizing language, exaggerated fluency claims, shame, fake personalization, and manipulative urgency.
 - Interface copy does not substitute for linguist-approved learning content.
 - Dates, currencies, names, and regional wording are displayed in explicit context rather than assumed from IP location.
+- Address teenagers and adults respectfully with clear language; do not infantilize teenagers, use coercive streak/peer pressure, or rely on slang that obscures consent, pricing, privacy, or safety information.
+- Interface translation and lesson translation are separate. Never label an interface locale as proof that lesson explanations, phrases, audio, policies, or support are translated.
 
-## 10. Design validation required
+## 10. Trust and compliance interaction requirements
 
-Before implementation sign-off: create original wireframes/prototypes for the key journeys; test responsive behavior and all scripts; verify component contrast and focus; conduct accessibility review; validate comprehension with representative users; and retain asset/font licenses. No such validation is claimed complete in Phase 0.
+- Applicable privacy, terms, refund/cancellation, and cookie/tracking policies use approved text, visible version/effective dates, stable links, readable typography, and accessible navigation. Plain-language summaries are supplemental, not substitutes.
+- Consent UI gives optional accept and refuse choices comparable prominence, avoids bundled or preselected optional consent, records the selected categories, and offers a persistent way to withdraw or revise them.
+- Pricing displays currency, interval, renewal, included access, material restrictions, cancellation, and applicable refund information before commitment; it never hides recurring terms behind tooltips or low-contrast text.
+- Business identity and support information must match verified records. Do not display an invented address, registration, certification, endorsement, or legal entity.
+- Age safeguards use neutral, accessible language from the approved policy and do not collect more age data than needed.
+- Marketing/nonessential email preference and unsubscribe controls are reachable from account settings and qualifying messages; confirmation states do not falsely claim propagation before it succeeds.
+- Account/data deletion supports loading, confirmation, pending, partial/retention-exception, completed, and failure/retry states. It must not imply that retained legal/backup data was erased if it was not.
+- Cookie/SDK consent failures default conservatively: optional integrations stay inactive and core learning remains usable where technically and legally permitted.
+- Regional unavailability or additional-consent states explain the verified reason category and next step without making unsupported legal claims or silently redirecting by country.
+
+## 11. Design validation required
+
+Before implementation sign-off: create original wireframes/prototypes for teenage and adult journeys, language selection/switching, and trust/compliance states; test responsive behavior and all supported scripts/locales; verify keyboard navigation, component contrast, meaningful alternative text, focus, and reduced motion; conduct accessibility review; validate comprehension with representative users aged 13–17 and 18+ under approved research safeguards; review the anti-pattern checklist; test favicon legibility and custom-domain identity; and retain asset/font/icon/favicon licenses. No such validation is claimed complete in Phase 0.

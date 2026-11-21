@@ -2,7 +2,7 @@
 
 These rules apply to founders, contributors, contractors, automation, and coding agents. They protect the commercial product from fabricated claims, unsafe shortcuts, and undocumented scope drift.
 
-The protected baseline is a commercial, non-hackathon SaaS for practical relocation, travel, work, and everyday communication: eight English-to-target tracks across seven target languages, with `pt-BR` and `pt-PT` separate. One founder may initially implement both frontend and backend; the other may contribute later. The founders jointly own the project, but ownership percentages remain unresolved. “Veyra” is a working name pending clearance. No customers, payments, translations, linguistic approvals, or audio are verified. Changing any of these facts requires explicit evidence and a synchronized documentation update.
+The protected baseline is a commercial, non-hackathon SaaS for practical relocation, travel, work, and everyday communication: eight English-to-target tracks across seven target languages, with `pt-BR` and `pt-PT` separate. Veyra targets international users aged 13+, including teenagers aged 13–17 and adults; international targeting does not prove legal eligibility in every country. English is the initial instructional language, while future interface/instructional languages require separate approval and evidence. Users control available language preferences; browser language may suggest but country/IP never forces a language. One founder plans to implement both frontend and backend; the other may contribute later. The founders jointly own the project, but ownership percentages remain unresolved. “Veyra” is a working name pending clearance. No customers, payments, translated lesson content, linguistic approvals, or audio are verified. Changing any of these facts requires explicit evidence and a synchronized documentation update.
 
 ## 1. Truth and evidence
 
@@ -12,6 +12,7 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 4. Record uncertainty using `PROPOSED`, `UNKNOWN`, or `BLOCKED`; never turn an assumption into a fact through repetition.
 5. `PROGRESS.md` contains only actual work and actual checks. Include command/environment and outcome for test claims.
 6. Do not claim production readiness until every applicable launch gate in `PRD.md` is evidenced.
+7. Do not fabricate social proof, testimonials, customer logos, ratings, activity, adoption, performance, security, accessibility, compliance, or business metrics.
 
 ## 2. Product and scope
 
@@ -21,6 +22,7 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 4. Preserve the distinction between planned, available, reviewed, published, and completed.
 5. Do not use “Veyra” as a cleared commercial brand. Trademark, domain, and name clearance remain unresolved until documented evidence exists.
 6. Do not invent founder ownership percentages, authority, IP assignments, or agreements.
+7. Preserve the eight confirmed English-to-target tracks. Do not claim that future interface localization creates non-English instructional content or translated lessons.
 
 ## 3. Learning content and assets
 
@@ -53,8 +55,27 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 8. Review dependencies, migrations, logs, backups, and external services for security and privacy impact.
 9. Do not log passwords, tokens, full cookies, payment details, or unnecessary personal content.
 10. Stop and escalate suspected secret exposure, cross-user access, payment inconsistency, content-license breach, or critical/high security issue.
+11. Apply privacy by design: minimize collection, document purpose and retention, default optional tracking off until applicable consent, and audit every production SDK/script/cookie/pixel before use and material upgrades.
+12. Account/data deletion must be server-authorized, cross-user safe, idempotent where retried, observable without exposing deleted data, and tested across the primary database, assets, logs, backups, email, analytics, billing, and other processors according to approved retention rules.
+13. Do not collect a minor’s precise date of birth, identity document, school, guardian details, contacts, location, behavioral profile, or other youth data unless a verified requirement and approved data-minimization review establish necessity, access, retention, and deletion.
+14. Treat ages 13–17 as a distinct threat/privacy-model cohort. Do not target them with manipulative monetization, dark patterns, unnecessary profiling, or unsupported marketing/consent flows.
 
-## 6. Engineering quality
+## 6. Legal and trust classification
+
+1. Treat jurisdiction-specific legal requirements as `UNKNOWN` until `T1.4` records the operating entity, launch jurisdictions, applicable requirements, and qualified approval.
+2. Never generate generic privacy, terms, refund, cookie, consent, age, or deletion text and present it as legally approved, jurisdiction-complete, or a substitute for counsel.
+3. Clearly label legal obligations separately from internal product requirements and recommendations. If one control serves both, record its verified legal basis and its product rationale separately.
+4. Before launch, use approved applicable policy text and verified business/support information; retain version, effective date, approval evidence, and the markets to which each document applies.
+5. Show transparent pricing and renewal/cancellation/refund information before purchase; do not use hidden terms, preselected add-ons, false urgency, or misleading confirmation.
+6. Obtain and record applicable consent, allow accessible refusal/withdrawal, and prevent optional SDKs/cookies from loading outside the approved choice.
+7. Implement approved age safeguards without inventing jurisdiction-specific eligibility/consent thresholds, legal capacity, or parental/guardian consent beyond the confirmed 13+ product audience.
+8. Provide working marketing/nonessential email unsubscribe and preference controls while distinguishing required transactional communications.
+9. Provide authenticated account/data deletion with clear status and truthful retention exceptions; a UI confirmation alone is not deletion evidence.
+10. Lawful asset licensing, accessibility, data minimization, and accurate business information are mandatory product controls even while jurisdiction-specific legal details remain unresolved.
+11. The 13+ audience boundary is a product decision, not proof that teenagers can legally register, consent, receive marketing, subscribe, or use every feature in every country. Require qualified age/privacy/consent review for intended launch markets.
+12. Never claim worldwide availability or compliance merely because Veyra targets international users.
+
+## 7. Engineering quality
 
 1. Read `PRD.md`, `ARCHITECTURE.md`, `DESIGN.md`, `RULES.md`, `TASKS.md`, `PROGRESS.md`, and `AGENTS.md` before application implementation.
 2. Preserve established repository work and inspect the current state before editing.
@@ -67,7 +88,7 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 9. Do not leave misleading dead controls, fake data, placeholder success messages, or production-facing TODO behavior.
 10. Record material architecture/product decisions and keep all seven governance documents consistent.
 
-## 7. Accessibility and responsive design
+## 8. Accessibility and responsive design
 
 1. Target WCAG 2.2 AA for all key journeys and test with more than automation.
 2. Use semantic HTML, visible focus, logical keyboard order, programmatic names, sufficient contrast, and accessible status/error handling.
@@ -76,7 +97,23 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 5. Start at a 320px layout and verify zoom/reflow and real mobile behavior.
 6. Do not accept a visually polished component that blocks assistive technology or small-screen use.
 
-## 8. Documentation and change control
+## 9. Design integrity
+
+1. Require original, premium, accessible design; do not copy competitors or ship generic dashboard/landing-page patterns as a substitute for product-specific design.
+2. Prohibit generic gradients, vague hero copy, fake social proof, fabricated metrics, excessive animation, gratuitous pill buttons, emoji UI icons, and unnecessary AI branding.
+3. Use a coherent licensed icon system, restrained purposeful motion, specific truthful copy, and component shapes that match their semantics.
+4. Public launch requires a real original/lawful favicon and a custom domain for the cleared brand; default framework identity and an uncleared “Veyra” domain are not launch-ready.
+
+## 10. Localization and internationalization
+
+1. Keep interface locale, instructional locale, and target-language track separate in requirements, data, UI, analytics, and status reporting.
+2. English is the only confirmed initial instructional language. Do not fabricate non-English explanations, lesson translations, localized policies, support, or availability.
+3. Let users explicitly select and change available preferred languages. Browser language may provide a dismissible suggestion; never force language from country, IP, flag, or browser inference.
+4. Preserve a saved explicit preference over inference, and do not reset progress or switch a target track when the interface language changes.
+5. Require reviewed localization resources, accessible names, appropriate fonts/scripts, Unicode-safe handling, locale formatting, fallback behavior, and human linguistic approval proportionate to content risk.
+6. International design must retain keyboard navigation, contrast, meaningful alternative text, reduced-motion support, and comprehension for teenagers and adults.
+
+## 11. Documentation and change control
 
 1. `PRD.md` is authoritative for product outcomes and scope; `ARCHITECTURE.md` for system boundaries; `DESIGN.md` for experience; `RULES.md` for non-negotiable standards; `TASKS.md` for execution; `PROGRESS.md` for evidence; `AGENTS.md` for agent behavior.
 2. Resolve conflicts using the precedence defined in `AGENTS.md`; do not silently overwrite a decision.
@@ -85,7 +122,7 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 5. Preserve any existing “Serial Hackathon Winner Playbook” in full. This commercial project neither replaces nor modifies it. If it appears later, do not edit it without explicit authorization.
 6. Never rewrite unrelated user changes or use destructive version-control/file operations without explicit authority and verified targets.
 
-## 9. Stop conditions
+## 12. Stop conditions
 
 Stop, mark the item `BLOCKED`, and request a decision when work would require:
 

@@ -58,7 +58,10 @@ This order does not permit silent overrides. If documents disagree materially, s
 
 - Veyra is a commercial SaaS, not a hackathon submission, focused on practical relocation, travel, work, and everyday communication.
 - The planned scope is eight English-to-target tracks across seven target languages; Brazilian and European Portuguese are separate tracks.
-- One founder may initially implement both frontend and backend while the other founder contributes later. Do not treat that staffing possibility as permission to weaken review, security, or quality controls.
+- One founder plans to implement both frontend and backend while the other founder may contribute later. Do not treat that staffing plan as permission to weaken review, security, or quality controls.
+- Veyra targets international users aged 13+, including teenagers aged 13–17 and adults aged 18+. This audience decision does not establish legal eligibility in any country.
+- English is the initial instructional language. Future interface/instructional languages are planned capability, not existing translated lesson content.
+- Keep interface locale, instructional locale, and the eight target-language tracks separate. Preserve explicit user choice; browser language may suggest, but country/IP must never force a language.
 - The two founders jointly own the project, but ownership percentages and the governing agreement remain unresolved.
 - “Veyra” is a working name pending clearance. No customers, payments, translations, linguistic approvals, or audio are verified.
 - Never fabricate users, revenue, demand, testimonials, research, content review, translations, audio, provider approval, payment, deployment, or test results.
@@ -77,8 +80,23 @@ This order does not permit silent overrides. If documents disagree materially, s
 - Run focused checks during development and the agreed broader checks before completion.
 - Automated accessibility scans are insufficient by themselves. Verify keyboard, focus, semantics, contrast, reflow, reduced motion, and relevant screen-reader behavior.
 - If a required check cannot run, report it as unverified and do not mark the affected acceptance criterion complete.
+- Apply privacy by design and verify authorization for consent, communication preferences, account export, and deletion. Test deletion behavior across in-scope stores/processors and report retention exceptions truthfully.
+- Inventory and review every added SDK, script, cookie, pixel, and external processor for purpose, data access, consent, security, licensing, and removal before production use.
 
-## 7. Content and asset safeguards
+## 7. Legal, trust, and design safeguards
+
+- Separate verified legal requirements, internal product requirements, and recommendations. Jurisdiction-specific obligations remain unresolved until `T1.4` records qualified evidence.
+- Never create generic legal copy and label it approved, complete, compliant, or suitable for a jurisdiction. Draft structure may be clearly marked for qualified review only.
+- Do not invent business identity, addresses, registrations, certifications, customer support availability, prices, refund rights, consent, age eligibility, social proof, or compliance status.
+- Enforce the `DESIGN.md` anti-pattern rules: no generic gradients, vague hero copy, fake social proof or metrics, excessive animation, gratuitous pill buttons, emoji UI icons, or unnecessary AI branding.
+- Require a cleared custom launch domain and original lawfully sourced favicon before launch; do not treat default framework branding as complete.
+- For trust/compliance work, test policy/version visibility, consent refusal/withdrawal, optional SDK blocking, transparent pricing, unsubscribe propagation, authorization boundaries, account/data deletion, retention exceptions, and accessibility.
+- Do not select an age/identity verification provider or invent teen consent/eligibility rules. Require `T1.4` and `T1.8` evidence for necessity, jurisdictions, minimization, accessibility, security, retention, subprocessors, and exit.
+- Minimize data for all users and apply heightened scrutiny to any data from ages 13–17; reject unnecessary birth dates, school/guardian/location/contact data, profiling, and manipulative youth monetization.
+- Never equate international targeting with worldwide legal, payment, content, support, or subscription availability.
+- For localization work, require explicit preference tests, browser-suggestion dismissal, no country/IP forcing, independent interface/instruction/track behavior, safe fallback, supported script/font rendering, accessibility, and truthful missing-translation states.
+
+## 8. Content and asset safeguards
 
 - Do not author or alter learning translations, pronunciation guides, regional expressions, linguistic approvals, or real audio unless the task includes qualified human-provided source material and review evidence.
 - Keep `pt-BR` and `pt-PT` distinct. Require reviewed Simplified Chinese and Pinyin for Mandarin.
@@ -86,11 +104,11 @@ This order does not permit silent overrides. If documents disagree materially, s
 - Retain lawful license/source/consent evidence for fonts, icons, illustrations, audio, and other assets.
 - Do not copy protected competitor content or interfaces.
 
-## 8. External frameworks and playbooks
+## 9. External frameworks and playbooks
 
 Any existing “Serial Hackathon Winner Playbook” must be preserved in full. Veyra is a commercial product and does not replace, revise, or absorb that framework. If such a playbook is added or discovered, treat it as separate and do not edit it without explicit authorization.
 
-## 9. Completion standard
+## 10. Completion standard
 
 A task is complete only when:
 

@@ -4,7 +4,7 @@
 
 This is a proposed architecture for implementation planning. No application code or deployed system is claimed. Specific vendors and libraries remain decisions until requirements, compatibility, eligibility, maintenance, security, and cost are checked.
 
-Veyra is a commercial SaaS, not a hackathon system. The planned scope is eight English-to-target tracks across seven target languages, with Brazilian and European Portuguese modeled separately. One founder may initially implement both frontend and backend, so the architecture should remain operable by a small team without weakening security or review controls. The founders jointly own the project, but ownership percentages remain unresolved. “Veyra” is a working name pending clearance. No customers, payments, translations, linguistic approvals, or audio are verified.
+Veyra is a commercial SaaS, not a hackathon system. The planned scope is eight English-to-target tracks across seven target languages, with Brazilian and European Portuguese modeled separately. One founder plans to implement both frontend and backend, so the architecture should remain operable by a small team without weakening security or review controls. The founders jointly own the project, but ownership percentages remain unresolved. “Veyra” is a working name pending clearance. No customers, payments, translations, linguistic approvals, or audio are verified.
 
 Architectural principles:
 
@@ -14,6 +14,7 @@ Architectural principles:
 - Honest degradation when audio, content, network, or billing services are unavailable.
 - Mobile-first delivery, accessibility, observability, testability, and reversible choices.
 - No production secret in source control or browser-delivered bundles.
+- Explicit user preferences outrank inferred locale signals; browser language may suggest but country/IP never forces interface or instructional language.
 
 ## 2. System boundaries
 
@@ -65,7 +66,7 @@ Identifiers should be opaque. Timestamps should be stored in UTC. User-facing lo
 | Entity | Purpose and key relationships |
 |---|---|
 | `User` | Product profile keyed to the authentication subject; contains minimal application data, not reusable credentials. |
-| `UserPreference` | Active track, interface preferences, reduced-motion choice where stored, and optional onboarding state. |
+| `UserPreference` | Explicit `interfaceLocale`, `instructionalLocale`, active track, reduced-motion choice where stored, and optional onboarding state. Inferred browser locale is not persisted as consent or an explicit selection. |
 | `LearningTrack` | Source language, target language, regional variant, display metadata, status, and current published release. `pt-BR` and `pt-PT` are distinct. |
 | `ContentRelease` | Immutable/versioned release for a track, with draft/reviewed/published/retired states, reviewer evidence, and timestamps. |
 | `Situation` | Ordered practical context within a content release. |
@@ -83,8 +84,23 @@ Identifiers should be opaque. Timestamps should be stored in UTC. User-facing lo
 | `BillingEvent` | Deduplicated provider event identifier, verification status, received/processed timestamps, type, and safe diagnostic metadata. |
 | `Entitlement` | Server-computed feature access with source, validity window, and audit trail. |
 | `AuditEvent` | Security/content/admin actions with actor, action, subject, time, and minimal safe metadata. |
+| `ConsentRecord` | User/anonymous subject where appropriate, consent category, choice, policy/version, capture method, jurisdiction context if approved, and timestamps; avoid storing unnecessary fingerprinting data. |
+| `CommunicationPreference` | User-level marketing/nonessential email choices, source, and update timestamp; transactional classification must follow approved requirements. |
+| `DeletionRequest` | Authorized request, scope, state, verification/confirmation timestamps, execution evidence, and approved retention exceptions without exposing deleted content. |
+| `EligibilityDecision` | Minimal, auditable result of the approved age/region eligibility and consent policy (for example allowed, additional consent required, or unavailable), policy/version, and timestamps; avoid storing full date of birth or identity evidence unless verified requirements make it necessary. |
 
 Schema details and retention rules require design before migrations. Do not store raw webhook secrets, passwords, full card data, or unnecessary personal data.
+
+### Localization-ready boundaries
+
+- Use standards-based locale identifiers (such as BCP 47 where appropriate) and explicit product-defined track identifiers; do not overload one field for interface, instruction, and target language.
+- Resolve interface locale in this order: explicit saved choice, explicit current-session choice, supported browser-language suggestion, then documented default. IP/country may inform legal eligibility only after approval; it never chooses language.
+- English is the confirmed initial instructional locale. The eight existing tracks remain English-to-target and unchanged.
+- Store interface messages in versioned locale resources separate from reviewed learning content. A translated UI resource cannot alter or imply translated phrases, exercises, audio, or instructional explanations.
+- Future instructional locales require separate versioned content releases, linguistic review, asset/audio associations, and progress/version policy.
+- Unsupported or missing interface strings use an explicit tested fallback and must be observable; missing lesson translations are unavailable, never machine-filled silently.
+- Locale-sensitive formatting for dates, times, numbers, currencies, names, text direction, pluralization, sorting, line breaking, and fonts belongs to the presentation boundary and support matrix.
+- Language preference changes must be authorized for authenticated users, persist across sessions, remain reversible, and not reset progress or silently switch target tracks.
 
 ## 6. Content versioning and publication
 
@@ -162,6 +178,19 @@ Billing is isolated behind an adapter and remains blocked for release until prov
 - Keep dependencies minimal; automate supported dependency and vulnerability checks; triage findings rather than claiming zero risk.
 - Define backup, restore, retention, deletion, incident response, and breach-notification ownership.
 - Collect minimal analytics only after purpose, consent, retention, and processor questions are settled.
+- Maintain a reviewed registry of every production SDK, third-party script, cookie, pixel, and processor, including purpose, data accessed, legal/consent basis as approved, configuration, owner, version, retention, security review, and removal path.
+- Load optional analytics/marketing integrations only after the applicable consent decision; revocation must stop future optional collection and update the recorded preference.
+- Treat account and data deletion as an authorized server-side workflow, not a client-only action: re-authenticate where required, prevent cross-user requests, enumerate owned data and external processors, execute idempotently, and retain only documented exceptions.
+- Test deletion against backups, logs, analytics, email, billing, object storage, and other processors according to the approved retention policy; never claim immediate erasure where architecture or law requires delayed retention.
+- Define age collection or age-assurance only after `T1.4`; minimize age data and prevent unsupported claims of parental consent.
+- The confirmed product audience is 13+. Treat ages 13–17 as a distinct privacy/threat-model cohort, collect no minors’ data merely for personalization or marketing convenience, and avoid precise birth dates unless verified requirements justify them.
+- Determine region/age eligibility and applicable consent at explicit decision points: before account creation, before optional tracking/marketing, before payment, and when the user changes a relevant region or policy context. Failure or uncertainty defaults to no optional processing and no unsupported availability claim.
+- Do not select or integrate an age/identity verification provider until `T1.4` and `T1.8` define necessity, jurisdictions, data minimization, security, accessibility, retention, subprocessors, cost, and exit requirements.
+- Separate essential transactional email from marketing/nonessential email and propagate unsubscribe/preference changes to the selected email provider.
+
+### Legal status of architecture controls
+
+The controls above are product and security requirements. The 13+ audience boundary is a confirmed product decision, but legal eligibility for teenagers and adults, consent authority, age-assurance method, retention period, policy content, and jurisdictional applicability must be supplied by `T1.4` and qualified review. Architecture documentation, international targeting, generated policy text, or a successful technical test is not legal approval.
 
 ## 13. Deployment and operations
 
@@ -172,6 +201,7 @@ Billing is isolated behind an adapter and remains blocked for release until prov
 - Health signals cover availability, errors, latency, database saturation, asset failures, authentication failures, and billing-event processing without logging personal content unnecessarily.
 - Alerts require an owner and actionable threshold. Runbooks should cover authentication, database, content, asset, and billing failures.
 - Hosting region, provider, SLOs, performance budgets, backup objectives, and log retention are **UNKNOWN**.
+- Production launch requires TLS, canonical redirects, and verified ownership for the approved custom domain; domain selection remains blocked by brand clearance. Serve the approved original favicon and related metadata rather than framework defaults.
 
 ## 14. Testing architecture
 
@@ -181,6 +211,8 @@ Billing is isolated behind an adapter and remains blocked for release until prov
 - **Component/accessibility tests:** key states, semantics, keyboard behavior, and reduced motion where valuable.
 - **End-to-end tests (Playwright):** account flow, lesson/resume, listening/comprehension, review queue, access isolation, responsive behavior, and verified billing sandbox journeys if billing is enabled.
 - **Manual checks:** screen readers, real mobile/touch behavior, audio quality, linguistic review, visual polish, recovery procedures, and provider dashboards.
+- **Privacy/compliance tests:** consent accept/refuse/withdraw paths, SDK/cookie blocking, email unsubscribe propagation, age-policy states, account/data deletion authorization and idempotency, processor cleanup, retention exceptions, and policy/version visibility.
+- **Localization tests:** explicit preference persistence/switching, browser-language suggestion and dismissal, no country/IP forcing, interface/instruction/track independence, fallback and missing-resource behavior, Unicode/script rendering, locale formatting, text expansion/direction where supported, keyboard navigation, contrast, meaningful alt text, and reduced motion.
 
 Test doubles must be labeled and cannot serve as evidence that a real provider, audio file, payment, or deployment works. Test results enter `PROGRESS.md` only when actually executed with command/environment and outcome.
 
@@ -193,3 +225,5 @@ Test doubles must be labeled and cannot serve as evidence that a real provider, 
 - Performance budgets, availability/recovery objectives, browser/device support matrix, and capacity targets.
 - Billing eligibility and payout feasibility in Nigeria.
 - Audio recording, licensing, processing, and delivery economics.
+- International launch-market eligibility and age/consent decision rules for 13–17 and 18+ users.
+- Future interface/instructional locale roadmap, translation workflow, resource tooling, fallback policy, and support/localized-policy coverage.
