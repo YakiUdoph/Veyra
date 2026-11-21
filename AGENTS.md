@@ -70,6 +70,9 @@ This order does not permit silent overrides. If documents disagree materially, s
 - Ownership percentages remain unknown until founders document them.
 - Payment eligibility/payouts in Nigeria, linguistic review, and audio licensing remain unresolved until evidence is recorded.
 - A redirect is not proof of payment; UI visibility is not authorization; an automated translation is not linguistic approval; synthetic/placeholder audio is not verified human pronunciation.
+- The technical founder has directed limited free private testing first and a later public freemium model, but no independent DePrince approval is recorded. T2.1 is a non-billing bootstrap and must contain no payment integration.
+- A possible future TrustMRR sale is an objective contingent on actual eligibility, not a claim of listing, valuation, sale readiness, revenue, subscribers, retention, customers, or MRR.
+- No adult or teenage research recruitment, contact, session, observation, or research-data collection may begin until appropriate research safeguards for the activity and cohort are approved. Free private access does not waive this gate.
 
 ## 6. Security, testing, and accessibility minimums
 
@@ -94,6 +97,7 @@ This order does not permit silent overrides. If documents disagree materially, s
 - Do not select an age/identity verification provider or invent teen consent/eligibility rules. Require `T1.4` and `T1.8` evidence for necessity, jurisdictions, minimization, accessibility, security, retention, subprocessors, and exit.
 - Minimize data for all users and apply heightened scrutiny to any data from ages 13–17; reject unnecessary birth dates, school/guardian/location/contact data, profiling, and manipulative youth monetization.
 - Never equate international targeting with worldwide legal, payment, content, support, or subscription availability.
+- Keep limited free private testing separate from paid public launch. Private testing does not authorize billing or satisfy paid-launch provider, legal, commercial, accounting, teen-payment, or verification gates.
 - For localization work, require explicit preference tests, browser-suggestion dismissal, no country/IP forcing, independent interface/instruction/track behavior, safe fallback, supported script/font rendering, accessibility, and truthful missing-translation states.
 
 ## 8. Content and asset safeguards

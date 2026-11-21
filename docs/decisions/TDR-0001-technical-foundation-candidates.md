@@ -35,7 +35,7 @@ Use a **single deployable modular monolith**:
 10. `next-intl` for interface resources, routing, and formatting. Learning content stays in separately versioned domain data; interface locale, instructional locale, and target track remain independent.
 11. Vitest for domain/integration tests and Playwright for browser, authorization, localization, responsive, and accessibility journeys.
 
-Do not add Redis, queues, microservices, a separate API service, a CMS, search infrastructure, realtime services, AI SDKs, an age-verification provider, or billing during T2.1. Add one only after a measured requirement and its own decision record.
+Do not add Redis, queues, microservices, a separate API service, a CMS, search infrastructure, realtime services, AI SDKs, an age-verification provider, or billing during T2.1. The technical founder has explicitly confirmed that T2.1 is non-billing; no payment SDK, billing schema, checkout, webhook, subscription state, paid entitlement, revenue-accounting integration, or payment test is authorized. Add a deferred capability only after a measured requirement and its own decision record.
 
 ## 3. Candidate and alternative comparison
 
@@ -101,7 +101,7 @@ All prices below are public list prices checked on 2026-11-21, in USD, excluding
 
 ## 6. Founder decisions required
 
-1. Approve or reject the modular-monolith direction and Node 24/Next.js 16/Tailwind 4 compatibility baseline after T1.10 defines browser/device support.
+1. Under T1.8, approve or reject the modular-monolith direction and Node 24/Next.js 16/Tailwind 4 compatibility baseline using the available compatibility and risk evidence. T1.10 then validates the approved baseline against its browser/device support matrix and quality budgets; an incompatibility requires a revised T1.8 record and re-review.
 2. Choose the operating entity and initial candidate launch countries so qualified T1.4 review can define teen/adult eligibility, consent, policy, processing, retention, and regional constraints.
 3. Choose managed versus self-controlled authentication risk: Better Auth ownership/maintenance or Clerk processor/cost/lock-in.
 4. Choose Vercel versus another Node/Docker host, and approve data regions, budgets, support level, and exit tolerance.
@@ -110,10 +110,12 @@ All prices below are public list prices checked on 2026-11-21, in USD, excluding
 7. Approve measurable quality budgets and the T1.10 support matrix.
 8. Explicitly authorize T2.1 only after T1.8 and T1.10 are complete.
 
+**Sequencing clarification:** The current technical-founder instruction resolves the earlier circular wording without approving this proposal: T1.8 approval precedes T1.10 validation. If T1.10 exposes an incompatibility, the affected T1.8 decision is revised and reviewed again. T1.8 and T1.10 both remain incomplete.
+
 ## 7. Exact T2.1 dependency state
 
 - **T1.8 is TODO.** Its direct dependencies T1.4, T1.6, and T1.7 are TODO. This draft covers candidate compatibility and public pricing only; it does not supply approved data locations, contracts/subprocessors, retention, complete SDK/data-flow inventory, youth threat model, deletion/export, licenses, or founder decisions.
-- **T1.10 is TODO.** It depends on T1.3, T1.8, and T1.9, all TODO. No browser/device/country matrix, performance/reliability budgets, test owners/environments, or pass/fail evidence format has been approved.
+- **T1.10 is TODO.** It depends on T1.3, T1.8, and T1.9. T1.3 is `IN PROGRESS`; T1.8 and T1.9 are `TODO`; none is complete. No browser/device/country matrix, performance/reliability budgets, test owners/environments, or pass/fail evidence format has been approved.
 - **Explicit implementation authorization has not been granted.**
 - Therefore **T2.1 remains TODO and blocked from starting**.
 

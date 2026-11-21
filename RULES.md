@@ -6,7 +6,7 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 
 ## 1. Truth and evidence
 
-1. Do not fabricate functionality, deployments, customers, revenue, research, testimonials, usage, demand, partnerships, credentials, reviews, or metrics.
+1. Do not fabricate functionality, deployments, customers, subscribers, revenue, MRR, retention, research, testimonials, usage, demand, partnerships, credentials, reviews, or metrics.
 2. Do not claim a task, test, review, deployment, or provider flow is complete without inspectable evidence.
 3. Do not present mocks, fixtures, stubs, screenshots, generated assets, or test doubles as live functionality.
 4. Record uncertainty using `PROPOSED`, `UNKNOWN`, or `BLOCKED`; never turn an assumption into a fact through repetition.
@@ -47,6 +47,10 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 4. Server-side verified, deduplicated, idempotently processed provider state is the authority for paid entitlements.
 5. Sandbox success is labeled sandbox success; it is not evidence of production onboarding or payouts.
 6. Do not collect live payments until legal terms, privacy, cancellation/refund behavior, support, provider approval, and end-to-end verification are complete.
+7. Limited free private testing is non-billing: do not add checkout, collect payment, create paid entitlements, or represent private testers as customers, subscribers, revenue, or MRR.
+8. T2.1 is a non-billing bootstrap. Payment SDKs, checkout, webhooks, subscription state, paid entitlement logic, revenue-accounting integration, and payment tests are outside its authorization.
+9. Public freemium launch requires genuinely useful free access and genuine paid features backed by real subscription billing, lawful payment operations, approved pricing/terms, verified provider/entity/market eligibility, teen-payment safeguards, and verifiable accounting.
+10. A possible future TrustMRR sale is conditional strategy only. Never claim platform eligibility, a listing, valuation, verified recurring revenue, sale readiness, or a transaction without current evidence.
 
 ## 5. Security and privacy
 
@@ -64,6 +68,7 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 12. Account/data deletion must be server-authorized, cross-user safe, idempotent where retried, observable without exposing deleted data, and tested across the primary database, assets, logs, backups, email, analytics, billing, and other processors according to approved retention rules.
 13. Do not collect a minor’s precise date of birth, identity document, school, guardian details, contacts, location, behavioral profile, or other youth data unless a verified requirement and approved data-minimization review establish necessity, access, retention, and deletion.
 14. Treat ages 13–17 as a distinct threat/privacy-model cohort. Do not target them with manipulative monetization, dark patterns, unnecessary profiling, or unsupported marketing/consent flows.
+15. Do not recruit, contact, interview, observe, or collect research data from adults or teenagers until the research activity, consent/recruitment process, data handling, safeguarding, and cohort-specific protections have been approved. Teen-specific safeguards remain mandatory where applicable.
 
 ## 6. Legal and trust classification
 

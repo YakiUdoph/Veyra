@@ -163,6 +163,8 @@ Schema details and retention rules require design before migrations. Do not stor
 
 Billing is isolated behind an adapter and remains blocked for release until provider verification.
 
+The technical founder's confirmed sequencing makes T2.1 a strictly non-billing bootstrap. T2.1 must not add a payment provider SDK, billing schema, checkout, webhook endpoint, subscription state, paid-entitlement implementation, revenue-accounting integration, or payment test. Limited free private testing uses no paid state and must not simulate a subscriber or payment. These exclusions do not remove the provider-neutral billing boundary from future architecture planning.
+
 - The server creates checkout with server-owned price identifiers; it never accepts an arbitrary amount or entitlement from the client.
 - Redirect success is not proof of payment.
 - Verify webhook authenticity using raw payload/signature requirements, reject replay where supported, deduplicate events, and process idempotently.
@@ -172,6 +174,7 @@ Billing is isolated behind an adapter and remains blocked for release until prov
 - Keep provider customer/subscription IDs but no card details.
 - Test checkout, renewal, failure, cancellation, refund/dispute, duplicate event, delayed event, and entitlement revocation in supported provider environments.
 - Verify Nigerian merchant onboarding, payout rails, settlement currency, fees, tax handling, and legal entity requirements before provider selection.
+- Before a paid public launch, reconcile provider-authoritative subscription and payment events to an approved accounting process so recurring-revenue reporting is reproducible and does not rely on client state, screenshots, forecasts, or manual marketing claims.
 
 ## 12. Security and privacy architecture
 

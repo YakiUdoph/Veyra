@@ -284,7 +284,7 @@ No application build, unit test, browser test, security scan, accessibility scan
 
 ### BLOCKED
 
-- Teen recruitment is blocked until a qualified research-specific youth/privacy decision and approved safeguards exist. Adult research may be prepared separately, but T1.3 cannot complete without its required teen segment and evidence.
+- Adult and teen participant research is blocked until the applicable activity- and cohort-specific safeguards are approved. Teen participation additionally requires qualified youth/privacy and country-specific safeguards where applicable; T1.3 cannot complete without its required teen segment and evidence.
 - T1.3 completion remains blocked on founder-approved methods/thresholds and actual, safeguarded research evidence. T1.4, T1.6, T1.9, T1.10, and T2.1 remain downstream and incomplete.
 
 ### Checks performed
@@ -364,3 +364,111 @@ No application build, unit test, browser test, security scan, accessibility scan
 - Read all seven governance documents and the existing German accommodation module specification before editing; inspected the repository and T1.7 state.
 - Checked official ElevenLabs Voice Library, Voices, Text to Speech, Voice Cloning, Terms, and Prohibited Use Policy sources dated 2026-11-21. Provider documentation was not treated as Veyra licensing approval.
 - No application code, package installation, audio generation, provider account action, reviewer approval, commit, or push was performed.
+
+## 2026-11-21 — Implementation-readiness audit
+
+### REPOSITORY EVIDENCE
+
+- The audit began on a clean local `main` at commit `f6555b2` (`docs: establish Veyra audio quality standards`) tracking `origin/main`.
+- The repository contains the seven governance files, one proposed founder record, one proposed technical decision record, one proposed validation plan, and one DRAFT German content specification. No application code, package manifest, lockfile, dependency installation, schema, provider configuration, reviewed content, licensed audio, prototype, or deployment exists.
+- No separate “Serial Hackathon Winner Playbook” artifact exists. The complete preservation requirements present in `AGENTS.md` and `RULES.md` remain unchanged.
+
+### EXACT TASK READINESS
+
+| Task | Current evidence | Exact blocker to completion |
+|---|---|---|
+| T1.1 — `IN PROGRESS` | Proposed founder discussion record only. | Both founders' explicit final agreement; ownership/IP, roles, authority, deadlock/exit, operational control and related terms; signed/approved location; qualified legal/accounting review where appropriate. |
+| T1.2 — `TODO` | No clearance or asset evidence. | Intended-market name/trademark/company/domain/handle checks, qualified review where appropriate, founder brand decision, domain-control evidence, and original lawful favicon approval. |
+| T1.3 — `IN PROGRESS` | Proposed research plan and technical-founder commercial direction only; no participants or results. | Founder approval of plan/thresholds; approved adult and teen research safeguards, including qualified youth/privacy review where applicable; actual interviews and concept tests; anonymized/contrary findings; all-track scoring; and mutually authorized scope/private-testing/free-paid-boundary/pricing decisions. |
+| T1.4 — `TODO` | Product requirements only; no qualified jurisdiction evidence. | Completed T1.1/T1.3; entity and intended/excluded jurisdictions; qualified country-by-age privacy/legal review; approved requirements matrix and policies; consent, retention, deletion, marketing, accessibility, consumer and policy-language decisions. |
+| T1.5 — `TODO` | No provider onboarding evidence. | Completed T1.1/T1.4 and direct provider/entity/market verification if billing enters scope. It is not required for a documented non-billing T2.1 foundation, but billing remains blocked. |
+| T1.6 — `TODO` | DRAFT German schema/module and proposed workflow only. | Completed T1.3/T1.4; approved qualifications/style/locale/source/IP/dispute/version rules; appointed qualified reviewers; reviewed pilot and auditable approval evidence. |
+| T1.7 — `TODO` | Founder audio requirements and proposed acceptance criteria only. | Completed T1.4/T1.6; approved asset/license/consent/format/storage/cost/replacement processes; verified provider/speaker and regional profiles; licensed pilot assets; qualified linguistic, technical, accessibility and metadata QA. |
+| T1.8 — `TODO` | `TDR-0001` is proposed research, not approval. | Completed T1.4/T1.6/T1.7; founder-approved non-billing provider/tool decisions; data locations, contracts/subprocessors, retention, consent, youth threat model, SDK/data-flow/license inventory, deletion/export and exit evidence. |
+| T1.9 — `TODO` | No prototype or validation evidence. | Completed T1.3/T1.6/T1.7; original prototypes for all required flows/states/scripts; lawful assets; accessibility and anti-pattern checks; safeguarded teenage/adult usability results and approved changes. |
+| T1.10 — `TODO` | No approved quality plan or matrix. | Completed T1.3/T1.8/T1.9; approved browser/device/locale/country support, performance/reliability/recovery budgets, accessibility/privacy/consent/deletion matrix, owners/environments/triggers, beta metrics, and evidence formats. |
+| T2.1 — `TODO` | Candidate architecture and a documented first-milestone definition only. | Completed T1.8 and T1.10 plus explicit implementation authorization. None exists; T2.1 is not authorized. |
+
+### BLOCKERS RESOLVED FROM EXISTING EVIDENCE
+
+- Corrected the T1.3 research plan's track list: it incorrectly included Japanese and omitted Italian. The confirmed tracks in `PRD.md` and the later founder audio decision establish Italian, not Japanese, as one of the eight tracks. No track or dependency changed.
+- Updated `TDR-0001` to reflect T1.3's actual `IN PROGRESS` status rather than `TODO` and explicitly exposed its T1.8/T1.10 sequencing conflict without approving a stack.
+- Refined T2.1 with the smallest compliant first implementation milestone and precise pass evidence, but kept it `TODO` and unauthorized.
+- Existing evidence already supports a non-billing, analytics-free baseline proposal, explicit locale separation, international 13+ product intent, English-first instruction, eight confirmed tracks, audio-quality requirements, and a DRAFT content-state model. These reduce future decision scope but do not satisfy any incomplete Phase 1 acceptance criterion.
+- The technical founder's subsequent instruction resolves the T1.8/T1.10 wording: T1.8 approves the technical baseline first, T1.10 validates it, and an incompatibility requires a revised T1.8 record. Neither task is complete.
+- The same instruction resolves the private-testing billing-state ambiguity: limited free private testing has no checkout or paid state; T2.1 has no payment integration; public freemium billing remains a separately gated later scope.
+
+### UNRESOLVED REQUIREMENT CONTRADICTIONS / AMBIGUITIES
+
+- T1.9 requires an approved custom-domain/favicon identity, but T1.2 is not a listed dependency. Its acceptance criterion cannot be met without the T1.2 evidence, so brand/domain/favicon work is a functional upstream blocker even though the dependency line omits it. Dependencies were not changed.
+- T1.3 requires research before its dependent T1.4 can complete, but the technical founder now requires safeguards before research involving adults or teenagers. A narrow qualified research/privacy review can supply activity-specific safeguards without claiming T1.4 complete; teen participation requires additional youth/country review where applicable.
+
+### DECISIONS FOUNDERS CAN MAKE
+
+- Mutually approve or revise the T1.1 founder terms and identify the authoritative signed agreement, with legal/accounting review where appropriate.
+- Approve or revise the existing T1.3 research plan, sample, thresholds, incentives, handling rules, and safeguards; approval cannot substitute for actual research or independent review.
+- Select the operating entity plan and candidate launch/exclusion jurisdictions for qualified T1.4 review; founders cannot self-declare jurisdictional compliance.
+- Resolve the remaining T1.9 functional brand/domain/favicon dependency ambiguity without weakening its acceptance criteria.
+- Approve reviewer qualification/process proposals, audio/asset policy proposals, provider evaluation budgets, a non-billing/analytics-free technical boundary, quality-budget proposals, and responsible owners. Approval cannot substitute for reviewer work, licensing, provider contracts, prototypes, tests, or legal evidence.
+- After T1.8 and T1.10 actually complete, provide explicit implementation authorization for T2.1. No such authorization currently exists.
+
+### INDEPENDENT EVIDENCE STILL REQUIRED
+
+- Mutual signed founder evidence and qualified legal/accounting advice where appropriate; brand/domain/trademark evidence; and qualified jurisdiction, youth/privacy, consent, consumer, accessibility, policy and data-rights review.
+- Actual safeguarded learner interviews and prototype sessions, including teenagers and adults, with retained contrary evidence.
+- Qualified linguistic review, reviewer agreements, licensed speaker/provider rights, distinct locale/voice evidence, actual-audio QA, and lawful asset provenance.
+- Provider account/contract/DPA/subprocessor/data-location/retention/deletion/export/exit evidence and exact compatibility/license inventory for the finally selected technical stack.
+- Original prototypes, accessibility/manual checks, representative browser/device/network evidence, performance/reliability/recovery budgets, and the final quality/test matrix.
+
+### T2.1 AUTHORIZATION AND NEXT ACTION
+
+- **T2.1 is not authorized.** T1.8 and T1.10 are incomplete, and no explicit implementation authorization is recorded.
+- The smallest executable action is non-code: both founders review and approve or revise the existing T1.3 plan and commission the appropriate research/privacy safeguards review before any adult or teen research, including the additional qualified youth/country review needed for teen participation. In parallel, they can finalize T1.1 and choose candidate entity/jurisdiction scope; none of these actions authorizes application code.
+- Once all gates are met, the first code milestone is the non-billing, analytics-free bootstrap now specified under T2.1, with its listed clean-install, quality-tool, build, security/license, accessibility, localization, and no-tracker evidence.
+
+### Checks performed
+
+- Read all seven governance documents, all existing founder/technical decision records, the validation plan, and the German content specification; inspected T1.1–T1.10 and T2.1 acceptance criteria and dependencies against repository evidence.
+- Inspected Git state and the repository inventory; searched for the protected playbook and found only its preservation requirements, not a separate artifact.
+- No application code, dependency installation, external account action, legal/research/linguistic/license claim, task completion, commit, or push was performed.
+
+## 2026-11-21 — Technical-founder commercial direction and sequencing correction
+
+### CONFIRMED WITH AUTHORITY LIMIT
+
+- The technical founder confirmed limited free private testing first and an intended public freemium model with useful free lessons plus genuine paid subscription features.
+- The stated commercial objective is sustainable, verifiable recurring revenue and a possible future sale through TrustMRR, conditional on actual platform eligibility. No eligibility, listing, valuation, sale readiness, customers, subscribers, retention, reviews, revenue, or MRR is evidenced.
+- T2.1 is a non-billing bootstrap. No payment integration, checkout, subscription state, paid entitlement, revenue-accounting integration, or payment test is authorized in T2.1.
+- A paid public launch requires real subscription billing, lawful payment operations, approved pricing/terms and teen-payment safeguards, verified provider/entity/market eligibility, and verifiable revenue accounting.
+- Research involving adults or teenagers may not begin until appropriate activity- and cohort-specific safeguards are approved; teen participation requires additional qualified youth/country review where applicable.
+- These are technical-founder directions only. No independent approval by DePrince, mutual founder agreement, provider approval, legal approval, customer result, or financial result is recorded.
+
+### DOCUMENTATION CHANGES
+
+- Recorded the technical founder's current commercial position and its evidentiary limits in `docs/decisions/FDR-0001-proposed-founder-arrangements.md` without changing the record's `PROPOSED` status or T1.1 completion state.
+- Added consistent limited-free-private-testing, public-freemium, paid-launch, truthful-metrics, TrustMRR, research-safeguard, and T2.1 non-billing boundaries to the seven governance documents.
+- Corrected the technical sequence in `TASKS.md` and `docs/decisions/TDR-0001-technical-foundation-candidates.md`: T1.8 approves the technical baseline, T1.10 validates it, and an incompatibility requires a revised T1.8 record. The candidate stack remains unapproved.
+- Clarified that T1.9/T1.10 private-testing prototypes and checks show paid plans/checkout as unavailable rather than inventing prices or paid states. Public freemium billing remains separately gated.
+- Updated `docs/research/T1.3-product-validation-plan.md` so no adult or teen research begins before applicable safeguards are approved; the existing no-results status and all eight tracks remain unchanged.
+- Preserved every task ID, dependency, and acceptance criterion. T1.8, T1.10, and T2.1 remain `TODO`; T2.1 remains `NOT AUTHORIZED`.
+
+### REMAINING BLOCKERS
+
+- DePrince's independent position and the mutual T1.1 founder agreement remain unresolved, including authority, ownership/IP, operational control, spending, revenue, deadlock/exit, paid-launch, and teen-payment terms.
+- T1.3 still lacks approved research safeguards, founder-approved plan/thresholds, participants, interviews, concept tests, findings, demand evidence, and a mutually authorized scope/free-paid/pricing decision.
+- T1.2 brand/domain/favicon evidence remains a functional blocker for T1.9 despite not appearing on its dependency line. No dependency was changed without authorization.
+- T1.4, T1.6, T1.7, T1.8, T1.9, and T1.10 still lack their required external reviews, approvals, artifacts, tests, and evidence. T2.1 is therefore not authorized.
+- Paid public launch remains blocked on T1.5 and downstream billing, legal, provider, accounting, pricing, consumer, privacy, security, accessibility, content/audio, teen-payment, and launch-gate evidence. TrustMRR eligibility remains unverified.
+
+### NEXT EXECUTABLE ACTION
+
+- Non-code only: both founders review and approve or revise the T1.3 plan and authorize a scoped qualified research/privacy safeguards review for the intended adult and teen activities. Do not recruit or contact participants until the applicable safeguards are approved.
+
+### Checks performed
+
+- Read all seven governance documents, both decision records, the T1.3 research plan, and the German content specification; inspected the current working-tree diff and repository inventory. No separate Serial Hackathon Winner Playbook artifact exists, and its preservation rules were unchanged.
+- Repository inventory contained only Markdown governance, decision, research, and content documents; no application code, package manifest, lockfile, schema, provider configuration, or installed dependency was created.
+- A focused `TASKS.md` diff check found no changed task heading, dependency, or acceptance-criteria line.
+- `git diff --check` exited `0` with no whitespace-error output; Git emitted only LF-to-CRLF working-copy warnings.
+- `git status --short` showed the seven governance documents plus the founder decision, technical decision, and research plan modified. `git diff --cached --name-only` returned no paths.
+- No application code, package installation, participant research, payment/provider action, commit, or push was performed.

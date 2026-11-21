@@ -181,6 +181,18 @@ This journey remains **BLOCKED** until provider eligibility for the operating en
 
 ## 9. Commercial assumptions
 
+### Commercial phase boundary
+
+The technical founder has confirmed the following direction; no independent approval from DePrince is recorded:
+
+- **Initial phase — limited free private testing:** no checkout, payment collection, paid entitlement, subscriber, customer, revenue, or MRR claim. Private access is not a public commercial launch and does not bypass approved eligibility, privacy, consent, research, content, audio, security, accessibility, support, or data-deletion requirements.
+- **Public commercial direction — freemium:** a genuinely useful free lesson offering plus genuine paid subscription features. The final free/paid boundary, prices, currencies, markets, payer/teen safeguards, terms, provider, taxes, accounting, and launch decision remain unresolved until their existing gates are met.
+- **Commercial objective:** sustainable, verifiable recurring revenue and a possible future sale through TrustMRR, subject to actual platform eligibility and then-current requirements. This objective is not evidence of eligibility, valuation, subscribers, retention, customers, revenue, MRR, or sale readiness.
+- **T2.1 boundary:** T2.1 is a non-billing technical bootstrap. It does not include or authorize payment integration, checkout, subscriptions, paid entitlements, revenue accounting, or live/sandbox payment flows.
+- **Paid public-launch boundary:** real subscription billing, lawful payment operations, verified provider/entity/market eligibility, approved consumer terms, cancellation/refund behavior, teen-payment safeguards, and verifiable revenue accounting are mandatory before a paid public launch.
+
+Research and private product testing are distinct. No adult or teenager may be recruited, contacted, interviewed, observed for research, or asked for research data until appropriate safeguards for that research are approved. Free access does not waive this gate.
+
 The following prices are hypotheses, not validated demand or final offers:
 
 - Free introductory lessons.

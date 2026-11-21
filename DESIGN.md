@@ -163,6 +163,8 @@ Breakpoints should follow content failure rather than device brand categories.
 
 ### 5.10 Subscription and account
 
+- During limited free private testing, subscription purchase controls are absent and the product states truthfully that paid plans are not offered in that phase. Do not show hypothetical prices, checkout, fake paid states, or label testers as customers or subscribers.
+- Public freemium surfaces are introduced only after the paid offer, business information, provider, markets, pricing, terms, and applicable safeguards are approved and implemented. The free offering must be genuinely usable and the paid boundary must be specific.
 - Current plan/entitlement, renewal/cancellation status, and provider-supported management action.
 - Plan comparison states exact price, interval, access, renewal, and known tax/refund terms.
 - Checkout pending, verification pending, active, failed, canceled, refunded/disputed, and unknown states remain distinct.
