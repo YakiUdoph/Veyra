@@ -331,3 +331,36 @@ No application build, unit test, browser test, security scan, accessibility scan
 
 - Read the seven governance documents and all existing founder, technical, and product-validation records before editing; inspected the actual T1.6/T1.7 requirements and repository state.
 - No application code, dependency, generated/licensed audio, reviewer approval, legal conclusion, content publication, commit, or push was created or claimed.
+
+## 2026-11-21 — Founder audio-quality requirements
+
+### CONFIRMED FOUNDER REQUIREMENTS
+
+- Pronunciation audio must sound natural, authentic, and regionally appropriate.
+- ElevenLabs “Lauren USA” is the preferred English instructional-narration voice reference, conditional on availability, licensing, compatibility, continuity, data, cost, and quality verification.
+- German, French, Spanish, Italian, Mandarin Chinese, Korean, Brazilian Portuguese, and European Portuguese require language-appropriate voice selection; `pt-BR` and `pt-PT` require distinct regional voice profiles.
+- Qualified language reviewers must evaluate each actual audio asset before publication for pronunciation, stress, rhythm, pauses, naturalness, register, consistency, and tones where applicable.
+- Approved recordings must be immutable versioned assets with content linkage, rights/license/consent evidence, reviewer decisions, approval, correction history, and replacement/withdrawal paths. Unapproved audio must not publish, and voice cloning is prohibited without documented authorization and applicable consent.
+
+### VERIFIED PROVIDER INFORMATION
+
+- Official ElevenLabs documentation checked on 2026-11-21 describes a dynamic Voice Library, language/accent filtering, voice-owner notice periods, plan/access restrictions, region-matched voice selection, plan-dependent commercial use, and cloning/verification restrictions.
+- The public official sources reviewed did not establish a stable “Lauren USA” voice ID, current availability, applicable notice period, plan/model access, Veyra's commercial rights, or quality on Veyra scripts. The founder preference therefore remains a conditional reference, not a selected or approved provider asset.
+
+### DOCUMENTATION CHANGES
+
+- Updated `AGENTS.md`, `PRD.md`, `ARCHITECTURE.md`, `DESIGN.md`, and `RULES.md` to enforce the founder requirements while separating target-language human pronunciation from conditional English instructional narration and separating founder intent from provider evidence.
+- Updated T1.7 notes in `TASKS.md` without changing its task ID, dependencies, acceptance criteria, checks, evidence requirements, or `TODO` status.
+- Updated `docs/content/german-accommodation-module-spec.md` with asset-purpose and voice-profile metadata, conditional provider evidence, actual-output review criteria, cloning safeguards, provider sources, and remaining verification gates. No audio was generated.
+
+### OUTSTANDING BLOCKERS
+
+- T1.7 remains incomplete because T1.4 and T1.6 are incomplete and no approved asset policy, voice profiles, provider/speaker selection, contract, license/consent, cost, recording specification, storage/replacement process, reviewer decision, or pilot asset exists.
+- ElevenLabs and “Lauren USA” require direct identity/catalog, account/plan, commercial-use, contract/terms, privacy/security/data-flow, continuity, export/replacement, cost, and actual-script quality verification at decision time.
+- Every target-language profile and actual audio asset still needs qualified locale-specific review. `pt-BR` and `pt-PT` need independent profile and asset evidence.
+
+### Checks performed
+
+- Read all seven governance documents and the existing German accommodation module specification before editing; inspected the repository and T1.7 state.
+- Checked official ElevenLabs Voice Library, Voices, Text to Speech, Voice Cloning, Terms, and Prohibited Use Policy sources dated 2026-11-21. Provider documentation was not treated as Veyra licensing approval.
+- No application code, package installation, audio generation, provider account action, reviewer approval, commit, or push was performed.

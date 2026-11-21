@@ -85,6 +85,17 @@ Brazilian and European Portuguese are separate content and pronunciation tracks.
 
 These are targets, not completed assets. The situations themselves, content workflow, reviewers, review evidence, and audio licenses are **UNKNOWN**.
 
+### Founder audio-quality requirements
+
+- Pronunciation audio must sound natural, authentic, and regionally appropriate. A provider label, voice name, generated file, speaker claim, or clean technical waveform is not sufficient evidence.
+- English instructional narration should use **ElevenLabs “Lauren USA”** as the preferred voice reference, subject to verifying the exact voice identity/ID, current availability, license and commercial-use rights, provider plan/model compatibility, continuity/removal terms, data handling, cost, and quality on Veyra's actual scripts. This preference is not provider selection, licensing evidence, or approval of generated audio.
+- German, French, Spanish, Italian, Mandarin Chinese, Korean, Brazilian Portuguese, and European Portuguese each require a voice selected for the approved language, locale, register, and learning purpose. The locale profile remains unresolved until T1.6/T1.7 evidence exists.
+- Brazilian Portuguese (`pt-BR`) and European Portuguese (`pt-PT`) require separate regional voice profiles and separately reviewed recordings; one profile cannot stand in for both.
+- A qualified reviewer for the applicable language/locale must listen to each actual asset version and approve pronunciation, stress, rhythm, pauses, naturalness, register, and tones where applicable before publication. Approval of a script, speaker, provider, model, or demo does not approve the output.
+- Approved recordings and generated narration, if later permitted, must be immutable versioned assets linked to the exact content version, voice/speaker source, locale profile, rights/license/consent evidence, production settings where applicable, reviewer decision, correction history, and replacement/withdrawal path.
+- Unapproved, superseded, rights-unclear, or unreviewed audio must never enter public learning paths. No voice may be cloned or imitated without documented authorization, applicable informed consent, rights evidence, and compliance with provider and jurisdictional requirements.
+- The existing MVP requirement for licensed, verified human pronunciation audio remains unchanged. English instructional narration is a separate asset purpose and does not convert synthetic narration into verified human target-language pronunciation.
+
 ## 7. Core user journeys
 
 ### 7.1 Shared language and age-appropriate onboarding

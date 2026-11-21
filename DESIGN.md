@@ -223,6 +223,11 @@ Automated checks support but do not replace manual accessibility testing.
 - Dates, currencies, names, and regional wording are displayed in explicit context rather than assumed from IP location.
 - Address teenagers and adults respectfully with clear language; do not infantilize teenagers, use coercive streak/peer pressure, or rely on slang that obscures consent, pricing, privacy, or safety information.
 - Interface translation and lesson translation are separate. Never label an interface locale as proof that lesson explanations, phrases, audio, policies, or support are translated.
+- Audio must feel natural, authentic, calm, and regionally appropriate rather than robotic, theatrical, rushed, or exaggerated. Rhythm, pauses, stress, register, and tones where applicable are part of content quality, not decorative polish.
+- Each target track shows only audio approved for its explicit locale profile. Brazilian and European Portuguese remain visibly and operationally distinct; never present one recording as both variants.
+- The accessible player may identify the approved language/region in plain language but must not use a provider, model, voice name, AI badge, or “authentic” claim as a substitute for reviewer evidence.
+- English instructional narration and target-language phrase pronunciation are separate experiences. The preferred “ElevenLabs Lauren USA” reference is conditional and must not be exposed as available until the exact voice, rights, quality, and continuity are verified and the actual output is approved.
+- Preview, unapproved, superseded, or rights-unclear audio is visibly restricted to authorized review surfaces and never appears in public lessons. Voice cloning or imitation is never presented as a convenience feature without documented authorization and applicable consent.
 
 ## 10. Trust and compliance interaction requirements
 

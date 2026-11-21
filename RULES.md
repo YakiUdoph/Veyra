@@ -33,6 +33,11 @@ The protected baseline is a commercial, non-hackathon SaaS for practical relocat
 5. Do not implement or claim pronunciation scoring without a separately approved, validated, and honestly communicated method.
 6. Use only original or lawfully licensed fonts, icons, illustrations, audio, copy, and other assets. Preserve license and consent records.
 7. Do not copy competitor interfaces, lesson content, branding, or protected assets.
+8. Pronunciation audio must be natural, authentic, and appropriate to its approved language, locale, region, and register. German, French, Spanish, Italian, Mandarin Chinese, Korean, `pt-BR`, and `pt-PT` require explicit voice selection; `pt-BR` and `pt-PT` require distinct profiles and review evidence.
+9. A qualified language reviewer must listen to the actual immutable audio version before publication and record findings for pronunciation, stress, rhythm, pauses, naturalness, register, consistency, and tones where applicable. Script or provider approval alone is insufficient.
+10. Keep English instructional narration separate from target-language pronunciation. “ElevenLabs Lauren USA” is a founder-preferred English narration reference only until exact identity, availability, licensing, commercial rights, compatibility, continuity, provider terms, and actual output quality are verified.
+11. Store every approved audio version with its content version, locale/region profile, speaker/provider/voice/model source, settings where applicable, checksum, rights/license/consent evidence, reviewer decision, approval, correction history, and replacement/withdrawal path. Never publish an unapproved or rights-unclear asset.
+12. Never clone, synthesize, or imitate an identifiable voice without documented authorization, applicable informed consent, rights evidence, and compliance with provider terms and applicable requirements. Never bypass voice-ownership or verification controls.
 
 ## 4. Billing and commercial claims
 

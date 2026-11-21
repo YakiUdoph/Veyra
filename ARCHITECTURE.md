@@ -72,7 +72,7 @@ Identifiers should be opaque. Timestamps should be stored in UTC. User-facing lo
 | `Situation` | Ordered practical context within a content release. |
 | `Phrase` | Ordered source/target text, context, locale, and review metadata within a situation/release. |
 | `PronunciationGuide` | Optional script/romanization data such as reviewed Pinyin, explicitly linked to a phrase version. |
-| `AudioAsset` | Storage key, locale, speaker/source, duration/type, checksum, license reference, review state, and phrase-version association. |
+| `AudioAsset` | Immutable asset/version, purpose (`target-pronunciation` or `instructional-narration`), storage key, language/locale/region profile, speaker/provider/voice/model source, generation settings where applicable, duration/type, checksum, license/consent reference, reviewer evidence, approval state, and exact content-version association. |
 | `IllustrationAsset` | Storage key, alt-text policy, source/license metadata, checksum, and content association. |
 | `Exercise` | Versioned deterministic prompt, answer specification, type, and content links. |
 | `LessonProgress` | User, track, release/situation, state, last position, completion timestamps, and concurrency version. |
@@ -151,6 +151,13 @@ Schema details and retention rules require design before migrations. Do not stor
 - Supply audio controls with play/pause/replay state, transcript/text equivalents, and no autoplay.
 - Preload conservatively for mobile data use; failure must show a retry/unavailable state without blocking textual learning.
 - Illustrations must be original or lawfully licensed, purposeful, responsive, and supplied with appropriate alternative text or marked decorative.
+- Model target-language pronunciation and English instructional narration as separate asset purposes with independent rights, review, replacement, and publication eligibility. English narration cannot satisfy a target-phrase pronunciation requirement.
+- Each approved track/locale has an explicit voice profile. German, French, Spanish, Italian, Mandarin Chinese, Korean, `pt-BR`, and `pt-PT` require language- and region-appropriate selection; `pt-BR` and `pt-PT` must never share one undifferentiated profile.
+- Qualified reviewers must evaluate the actual immutable output—not only the script, speaker sample, model, or provider demo—for pronunciation, stress, rhythm, pauses, naturalness, register, consistency, and tones where applicable. A changed recording, model, voice, settings, edit, or content version requires a recorded impact decision and re-review where affected.
+- Publication queries and release validation must reject any audio whose version, rights/license/consent evidence, locale profile, reviewer decision, approval state, or linked content version is missing, expired, withdrawn, or mismatched.
+- Store provider voice IDs rather than display names alone and record provider/model version, account/plan entitlement, generation settings, notice/removal terms, and an export/replacement path when generated narration is approved.
+- “ElevenLabs Lauren USA” is a founder-preferred English instructional-narration reference only. Its stable identity, availability, commercial rights, compatibility, continuity, privacy/security terms, cost, and Veyra-script quality are unverified; no provider integration or generated asset is authorized.
+- Do not create or use a voice clone unless documented authorization, applicable informed consent, rights evidence, provider-policy compliance, security/privacy review, and an approved T1.7 workflow all exist. Provider verification controls must not be bypassed.
 
 ## 11. Billing boundary
 

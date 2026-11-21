@@ -60,10 +60,13 @@ The schema is a product/content specification, not application code or a selecte
 | Field | Requirement |
 |---|---|
 | `audioAssetId` and `assetVersion` | Stable asset identity and immutable version. |
+| `assetPurpose` | Required value distinguishing `target-pronunciation` from `instructional-narration`; one purpose cannot satisfy the other. |
 | `phraseId` and `phraseVersion` | Exact reviewed phrase/version spoken; text changes invalidate the association. |
 | `locale` | Reviewed spoken locale, here proposed as `de-DE`. |
 | `speakerId` | Pseudonymous/internal speaker reference; personal contract data stays in restricted records. |
 | `speakerQualification` | Evidence of target-locale competence and suitability for the specified register; never inferred from nationality alone. |
+| `voiceProfile` | Approved language, locale, region, register, delivery purpose, and selection evidence. `pt-BR` and `pt-PT` profiles must be distinct. |
+| `providerSource` | Provider, stable voice ID, display name as non-authoritative metadata, model/version, account/plan entitlement, settings, notice/removal terms, and export/replacement route when generated narration is permitted. |
 | `recordingSpec` | Approved master/delivery formats and measurable technical targets. |
 | `licenseRecord` | Rights holder, grant/license/consent evidence, permitted commercial uses and territories, term, editing/streaming/download rights, attribution, revocation/replacement terms, and restrictions. |
 | `checksums` | Cryptographic checksum for the accepted master and each delivery derivative. |
@@ -206,30 +209,48 @@ Reviewer selection must record target locale, relevant qualifications, conflicts
 
 These are production-oriented proposals for T1.7, not approved policy or evidence that an asset exists.
 
-### 6.1 Rights and speaker gate
+### 6.1 Founder requirements and provider status
+
+- All pronunciation audio must sound natural, authentic, and regionally appropriate. German, French, Spanish, Italian, Mandarin Chinese, Korean, Brazilian Portuguese, and European Portuguese require language-appropriate voice selection; `pt-BR` and `pt-PT` require distinct profiles and separately reviewed assets.
+- Qualified reviewers for the applicable language/locale must check each actual immutable audio version for pronunciation, stress, rhythm, pauses, naturalness, register, consistency, and tones where applicable before publication.
+- English instructional narration should use ElevenLabs “Lauren USA” as the preferred voice reference, subject to verification. It is a separate asset purpose from the German target-pronunciation audio in this module.
+- Official ElevenLabs documentation checked on 2026-11-21 describes a dynamic Voice Library with language/accent filters, access restrictions, voice-owner notice periods, and plan-dependent commercial use. It also recommends matching a voice to the target language/region. Those general capabilities do not verify a “Lauren USA” voice's stable ID, current availability, rights, notice period, model compatibility, or suitability for Veyra.
+- No provider or voice has been selected. No ElevenLabs account entitlement, contract, DPA, data flow, commercial license, cost, voice ID, availability, continuity, output, or quality test is evidenced in this repository.
+- Current official cloning documentation and policy impose ownership, verification, and consent restrictions. Veyra must never clone or imitate a voice without documented authorization, applicable informed consent, rights evidence, and compliance with the provider's then-current terms and applicable requirements; no verification safeguard may be bypassed.
+
+Provider references checked on 2026-11-21:
+
+- ElevenLabs Voice Library documentation: https://elevenlabs.io/docs/eleven-creative/voices/voice-library
+- ElevenLabs Voices documentation: https://elevenlabs.io/docs/overview/capabilities/voices
+- ElevenLabs Text to Speech documentation: https://elevenlabs.io/docs/overview/capabilities/text-to-speech
+- ElevenLabs Voice Cloning documentation: https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning
+- ElevenLabs Terms of Service and Prohibited Use Policy: https://elevenlabs.io/terms-of-use and https://elevenlabs.io/use-policy
+
+### 6.2 Rights and speaker gate
 
 - The exact phrase version is `APPROVED` and frozen before final recording.
 - The selected speaker's `de-DE` competence and ability to deliver the specified formal-neutral register are documented by the linguistic reviewer; no nationality or demographic stereotype is required.
 - A signed agreement or license identifies the rights holder and expressly covers the intended commercial SaaS uses, territories, duration, streaming/download or offline use if applicable, editing/normalization, derivative encodes, storage/CDN, replacement, attribution, compensation, withdrawal, and use after termination.
 - The speaker understands the script and recording use. No minor is recorded for this module unless a separately approved necessity, safeguarding process, consent authority, contract, and licensing review exists; the default is an eligible adult speaker.
-- Third-party music, room media, synthetic voice, voice clone, copied course audio, or unlicensed material is prohibited.
+- For published target-language pronunciation, the existing PRD baseline still requires licensed, verified human pronunciation audio. Synthetic or cloned target pronunciation cannot be substituted through this specification. English instructional narration is a separate conditional asset class; generated narration remains prohibited until its provider voice, commercial rights, data terms, model/settings, actual output, and T1.7 workflow are verified and approved.
+- Third-party music, room media, unauthorized synthetic or cloned voice, copied course audio, or unlicensed material is prohibited.
 
-### 6.2 Linguistic and performance gate
+### 6.3 Linguistic and performance gate
 
 - The recording exactly matches the approved German phrase version; no omitted, added, or substituted word.
-- A qualified `de-DE` reviewer accepts pronunciation, stress, intonation, articulation, natural pace, formal-neutral register, and consistency across the module.
+- A qualified `de-DE` reviewer listens to and accepts the actual immutable asset version for pronunciation, stress, intonation, rhythm, pauses, articulation, naturalness, formal-neutral register, and consistency across the module. Approval of the text, speaker, provider, model, or demo is insufficient.
 - Delivery is clear for a learner without becoming distorted, robotic, exaggerated, or falsely presented as the only valid German accent.
 - Each asset contains one phrase, with useful leading/trailing silence and no spoken file name or production chatter.
 - Any edit or rerecord receives a new immutable asset version and repeats linguistic and technical QA.
 
-### 6.3 Proposed technical gate
+### 6.4 Proposed technical gate
 
 - Preserve a lossless mono PCM WAV master, proposed at 48 kHz/24-bit; select delivery encoding only after the approved architecture, bandwidth, browser, and accessibility tests.
 - No clipping, audible distortion, distracting noise, hum, reverb, plosives, mouth noise, truncation, or inconsistent level. Proposed speech target: approximately `-18 LUFS` integrated with a `±2 LU` tolerance and true peak no higher than `-1 dBTP`, subject to validation by an audio professional and representative-device tests.
 - Record and verify duration, file type by content, sample rate/bit depth, channel count, checksum, phrase/version, locale, speaker reference, take, QA decisions, license record, storage key, and replacement relationship.
 - Test on representative phone speaker, headphones, low-bandwidth delivery, replay/pause controls, failure/retry state, and reduced-data behavior.
 
-### 6.4 Accessibility gate
+### 6.5 Accessibility gate
 
 - Display the exact reviewed phrase and accessible English meaning with the audio; identify language changes programmatically.
 - Never autoplay. Provide keyboard-operable play, pause, and replay controls with visible focus and an announced state.
@@ -301,8 +322,10 @@ Only these forward transitions are allowed; rejection or a material correction r
 ### T1.7 audio/asset requirements
 
 - Completion of T1.4 and T1.6 dependencies and approval of the asset policy and technical specification.
+- Verification or rejection of ElevenLabs “Lauren USA” as the English instructional-narration reference, including stable identity, availability, account/plan eligibility, commercial rights, terms, notice/removal continuity, model compatibility, data processing, cost, export/replacement, and actual-script quality. The display name alone is not evidence.
+- Approved language/locale/register voice profiles for German, French, Spanish, Italian, Mandarin Chinese, Korean, `pt-BR`, and `pt-PT`, with distinct Brazilian and European Portuguese evidence.
 - Speaker selection and qualification; signed commercial-use consent/license; compensation/cost; territories/term; distribution, editing, offline, replacement, withdrawal, and attribution rights.
-- Actual recording from the frozen approved script, immutable masters/derivatives, metadata, checksums, storage/access decisions, linguistic QA, technical QA, accessibility checks, and representative-device tests.
+- Actual recording from the frozen approved script, immutable masters/derivatives, metadata, checksums, storage/access decisions, linguistic QA covering pronunciation, stress, rhythm, pauses, naturalness, register, and tones where applicable, technical QA, accessibility checks, and representative-device tests.
 - Approved illustration decision and provenance if imagery is introduced. No illustration is required by this draft.
 
 ### Founder/content-owner decisions

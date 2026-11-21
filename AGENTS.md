@@ -103,6 +103,9 @@ This order does not permit silent overrides. If documents disagree materially, s
 - Preserve content versions and historical progress; do not silently mutate published content.
 - Retain lawful license/source/consent evidence for fonts, icons, illustrations, audio, and other assets.
 - Do not copy protected competitor content or interfaces.
+- Enforce the founder audio-quality requirements: natural, authentic, regionally appropriate delivery; language-appropriate voice selection for every track; distinct `pt-BR` and `pt-PT` voice profiles; qualified review of the actual audio for pronunciation, stress, rhythm, pauses, naturalness, and tones where applicable; versioned rights/review evidence; and no publication before approval.
+- Treat “ElevenLabs Lauren USA” only as the founder-preferred reference for English instructional narration until the exact provider voice identity, availability, commercial rights, plan/model compatibility, continuity, data terms, and output quality are verified. A voice name or provider demo is not approval.
+- Never clone, synthesize, or imitate an identifiable voice without documented authorization, applicable informed consent, rights evidence, and compliance with provider terms and applicable requirements. Do not bypass a provider's ownership or verification controls.
 
 ## 9. External frameworks and playbooks
 
