@@ -53,14 +53,24 @@
 - **Checks:** Complete seven-document read, cross-document contradiction scan, confirmed/unknown terminology scan, existing task-ID/dependency comparison, `git diff --check`, and `git status --short`.
 - **Completion evidence:** Documentation-only diff and dated evidence in `PROGRESS.md`.
 
+### D0.5 — Prepare technical feasibility evidence — COMPLETED
+
+- **Dependencies:** D0.4.
+- **Scope:** Inspect the documentation-only repository and actual T1.8/T1.10 dependency chain; research a smallest defensible non-billing architecture using current primary provider/library sources; record candidate compatibility, cost, security/privacy, youth/international impact, lock-in, exit, unknowns, and founder decisions without application code or provider selection.
+- **Acceptance criteria:** A clearly non-approved technical decision draft separates verified facts, proposals, unknowns, and founder decisions; covers the proposed stack and Veyra-specific 13+, localization, content/audio, progress, deletion, accessibility, and future-billing boundaries; preserves every implementation task/dependency and leaves T1.8, T1.10, and T2.1 incomplete.
+- **Checks:** Complete seven-document read, repository/Git inventory, primary-source verification dated 2026-11-21, task-dependency review, documentation link/whitespace review, `git diff --check`, and `git status --short`.
+- **Completion evidence:** `docs/decisions/TDR-0001-technical-foundation-candidates.md` and the dated technical-feasibility entry in `PROGRESS.md`.
+
 ## 3. Phase 1 — decisions and discovery
 
-### T1.1 — Resolve founder governance — TODO
+### T1.1 — Resolve founder governance — IN PROGRESS
 
 - **Dependencies:** D0.1.
 - **Acceptance criteria:** Founders record ownership percentages, IP assignment, roles, decision rights, vesting/exit considerations as applicable, and who can approve product/legal/financial changes through qualified advice.
 - **Tests/checks:** Both founders review the final agreement; counsel/accounting review where appropriate.
 - **Evidence:** Signed/approved agreement location and non-sensitive decision summary; do not commit confidential terms unless intentionally approved.
+- **Current evidence:** `docs/decisions/FDR-0001-proposed-founder-arrangements.md` records one set of discussion inputs only. It is not mutually approved or signed and does not satisfy the acceptance criteria.
+- **Remaining:** Mutual agreement and appropriate legal/accounting review covering ownership/IP structure, responsibilities/contributions, expenses/reimbursement, revenue/compensation, decision authority/deadlock, departure/transfer, operational account control, entity, and paid-launch/teen-payment safeguards.
 
 ### T1.2 — Conduct brand and domain clearance — TODO
 
@@ -69,12 +79,14 @@
 - **Tests/checks:** Qualified legal review where appropriate; verify domain availability and control at decision time; inspect favicon provenance and legibility at required sizes without treating visual approval as trademark clearance.
 - **Evidence:** Dated decision, counsel/search references, domain-control evidence, and favicon source/license record without claiming broader clearance than performed.
 
-### T1.3 — Validate user problems and commercial hypotheses — TODO
+### T1.3 — Validate user problems and commercial hypotheses — IN PROGRESS
 
 - **Dependencies:** D0.1.
 - **Acceptance criteria:** Founders predefine international participant segments including ages 13–17 and 18+, relocation/travel/work contexts, language/accessibility needs, interview/usability method, sample target, and success/failure thresholds; conduct research; record anonymized findings and resulting scope/pricing decisions.
 - **Tests/checks:** Research notes trace conclusions; contradictory evidence is retained; approved safeguards, consent, recruitment, data minimization, and deletion requirements for research involving teenagers are followed.
 - **Evidence:** Research plan, dated findings, and decision record. No fabricated statistics.
+- **Current evidence:** `docs/research/T1.3-product-validation-plan.md` proposes evidence-labeled segments, an interview/concept-test method, 10 questions, sample and decision thresholds, an approach comparison, an eight-track scoring rubric, a testable lesson flow, and completion evidence. It contains no participant findings and is not founder-approved.
+- **Remaining:** Founder approval of the plan and thresholds; qualified research-specific youth/privacy safeguards; lawful recruitment and consent evidence; completed interviews and concept tests; anonymized findings including contrary evidence; an evidence-cited all-track matrix; and a founder-approved scope, first-three sequencing, free-beta, and pricing decision record.
 
 ### T1.4 — Define launch jurisdictions, privacy, and legal requirements — TODO
 

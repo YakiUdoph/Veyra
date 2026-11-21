@@ -189,3 +189,106 @@ No application build, unit test, browser test, security scan, accessibility scan
 - `git diff --check` exited successfully with no whitespace-error output; Git emitted only Windows LF-to-CRLF working-copy warnings.
 - `git status --short` and `git diff --name-only` showed modifications to exactly the seven governance Markdown files. No application file was created, staged, committed, or pushed.
 - `D0.4` is complete as documentation work only. No legal review, country eligibility, localization resource, translated lesson, consent flow, age provider, application feature, or product test was completed.
+
+## 2026-11-21 — Technical feasibility research
+
+### CONFIRMED
+
+- All seven governance documents were read completely before this work.
+- The repository contained only the seven governance Markdown files at inspection; no package manifest, application code, schema, lockfile, provider configuration, or installed dependency existed.
+- The working tree was clean on local commit `da50b7f` before this research update; `origin/main` was reported as gone.
+- Current official sources support a compatible baseline using Node.js 24 LTS, Next.js 16 App Router, TypeScript, Tailwind CSS 4, PostgreSQL, Vitest, and Playwright. Exact package patches remain unselected because no authorized install/lockfile exists.
+- T1.8 remains `TODO` with T1.4, T1.6, and T1.7 incomplete. T1.10 remains `TODO` with T1.3, T1.8, and T1.9 incomplete. Explicit T2.1 implementation authorization has not been granted.
+
+### COMPLETED
+
+- Researched current primary sources for the proposed framework/runtime, database/data tooling, authentication, email, object storage/CDN, hosting, monitoring, privacy-conscious analytics, localization, and testing choices.
+- Added `docs/decisions/TDR-0001-technical-foundation-candidates.md` as a `PROPOSED` decision draft with verified compatibility/cost evidence, alternatives, security/privacy and youth/international risks, exit paths, unknowns, and founder decisions.
+- Recommended a non-billing modular monolith as the smallest candidate architecture and explicitly excluded unnecessary queues, Redis, microservices, a separate API, CMS, realtime, AI, age-verification, analytics, and billing integrations from the T2.1 baseline.
+- Added documentation task D0.5 only. No implementation task, provider decision, legal conclusion, test, deployment, translation, audio, payment, or customer claim was completed.
+
+### UNKNOWN
+
+- Operating entity, approved launch countries, country-by-age legal eligibility/consent, provider contractual eligibility, data regions, DPA/subprocessors, retention/deletion rules, and qualified legal/privacy conclusions.
+- Founder-approved vendors, budgets, support/SLA levels, browser/device/country matrix, performance/reliability objectives, production volumes, exact package versions, and complete dependency/license inventory.
+- Final authentication method, email policy, analytics necessity, locale rollout/fallback, reviewed content workflow, licensed audio process, and real usage-based cost.
+
+### BLOCKED
+
+- This candidate research does not satisfy T1.8 because its upstream legal, localization, and asset decisions and its required complete reviews/inventories are absent.
+- T1.10 remains blocked on T1.3, approved T1.8 decisions, and validated T1.9 prototypes.
+- T2.1 remains blocked on completed T1.8 and T1.10 plus explicit implementation authorization.
+
+### Checks performed
+
+- `rg --files -g '!node_modules' -g '!.git'` listed the seven governance files plus only the new technical decision draft; no application, package, schema, lockfile, or provider-configuration file was present.
+- Comparison of every existing `T*` heading and dependency line against `HEAD:TASKS.md` showed no change; the only added dependency line belongs to documentation task D0.5.
+- `git diff --check` exited successfully with no whitespace-error output; Git emitted only LF-to-CRLF working-copy warnings.
+- `git status --short --branch` reported local `main` tracking a gone `origin/main`, with `PROGRESS.md` and `TASKS.md` modified and `docs/` untracked.
+- No dependency installation, build, unit/browser test, provider account action, application code, commit, or push was performed.
+
+## 2026-11-21 — T1.1 founder discussion record
+
+### CONFIRMED
+
+- A founder discussion input proposed 50/50 ownership, shared operating expenses, joint approval for major decisions, the frontend/backend founder as intended technical lead, a free initial beta, and a later freemium subscription model.
+- The supplied inputs were explicitly identified as not mutually approved agreements.
+- No approval, signature, or confirmation from DePrince was supplied or found.
+
+### COMPLETED DOCUMENTATION WORK
+
+- Added `docs/decisions/FDR-0001-proposed-founder-arrangements.md` with `PROPOSED` status, the six discussion inputs, their evidentiary limits, the unresolved agreement subjects, and the evidence required before approval can be claimed.
+- Changed T1.1 from `TODO` to `IN PROGRESS` and linked the partial discussion evidence. T1.1 was not marked complete and its acceptance criteria were not weakened.
+- No product, legal, financial, paid-launch, subscription, provider, or implementation approval was recorded.
+
+### UNKNOWN / UNRESOLVED
+
+- IP assignment and ownership structure; founder responsibilities and contribution expectations; expense limits and reimbursement; revenue distribution and compensation; deadlock resolution; founder departure and ownership transfer; operational account/domain/repository/infrastructure control; business entity and applicable legal review; and paid-launch approval and teen-payment safeguards.
+- Whether DePrince or the other founder accepts, rejects, or wishes to revise any proposal.
+
+### BLOCKED
+
+- T1.1 cannot be completed until both founders approve final terms, appropriate legal/accounting review is obtained where needed, and the signed/approved agreement evidence and non-sensitive summary required by `TASKS.md` exist.
+
+### Checks performed
+
+- Read all seven governance documents completely and inspected the existing decision records and working-tree diff before editing.
+- `git diff --check` exited successfully with no whitespace-error output; Git emitted only LF-to-CRLF working-copy warnings for `TASKS.md` and `PROGRESS.md`.
+- `git status --short --branch` reported `PROGRESS.md` and `TASKS.md` modified plus the existing untracked `docs/` directory; local `main` still tracks a gone `origin/main`.
+- `git diff --cached --name-only` returned no paths, confirming nothing is staged.
+- Repository inventory found only Markdown documentation and no application code, package manifest, schema, lockfile, or provider configuration.
+- No application code, commit, or push was authorized or performed.
+
+## 2026-11-21 — T1.3 product validation preparation
+
+### CONFIRMED
+
+- D0.1, T1.3's only dependency, is complete. T1.3 requires predefined international segments, separate ages 13–17 and 18+ coverage, methods, sample targets, thresholds, actual research, anonymized findings, and resulting scope/pricing decisions.
+- No participant recruitment, interview, concept test, validated demand, willingness-to-pay evidence, reviewed learning content, licensed audio, or customer evidence exists.
+- The repository contains no separate “Serial Hackathon Winner Playbook” artifact. Its preservation rule in `AGENTS.md` and `RULES.md` remains unchanged, and no such playbook content was edited.
+
+### COMPLETED DOCUMENTATION WORK
+
+- Added `docs/research/T1.3-product-validation-plan.md` as a clearly `PROPOSED` research plan with known facts separated from hypotheses, four job-based learner segments, separate teen/adult analysis, a proposed 18-interview and 8-concept-test sample, predeclared success/failure thresholds, and strict evidentiary limits.
+- Added exactly 10 concise interview questions; a dated, source-linked comparison of action-oriented, adaptive, guided-dialogue, audio-first recall, and active-recall/spaced-review approaches; and an explicit warning that provider descriptions are not independent effectiveness evidence.
+- Added a weighted, evidence-cited rubric for sequencing the first three tracks without removing the other five; no track was selected without research.
+- Defined the requested situation → explanation → reviewed audio → practice → feedback → saved progress → review flow, including pass conditions and honest untested states, plus text-first capabilities that need no speech recognition, paid AI API, or unlicensed audio.
+- Changed T1.3 from `TODO` to `IN PROGRESS` and linked the preparation evidence. Acceptance criteria and dependencies were preserved; T1.3 was not marked complete.
+
+### UNKNOWN / UNRESOLVED
+
+- Whether founders approve the proposed participant mix, thresholds, incentive, research materials, first-three rubric, and decision rules.
+- Where and under what recruitment, consent/assent, guardian, safeguarding, incentive, storage, access, retention, and deletion rules teenagers may participate.
+- Actual learner problems, alternative-use gaps, accessibility needs, repeat-use commitments, lesson-flow comprehension, track priorities, and pricing/payer evidence.
+- Linguistic reviewers, approved lesson content, audio sources/licenses, and whether the complete audio step can be tested lawfully.
+
+### BLOCKED
+
+- Teen recruitment is blocked until a qualified research-specific youth/privacy decision and approved safeguards exist. Adult research may be prepared separately, but T1.3 cannot complete without its required teen segment and evidence.
+- T1.3 completion remains blocked on founder-approved methods/thresholds and actual, safeguarded research evidence. T1.4, T1.6, T1.9, T1.10, and T2.1 remain downstream and incomplete.
+
+### Checks performed
+
+- Read the seven governance documents and both existing decision records before editing; inspected T1.3 and its dependency chain; and inventoried the repository for the protected playbook.
+- Checked primary/public sources dated 2026-11-21 from the Council of Europe, Duolingo, Babbel, Pimsleur, and Anki. The research plan distinguishes standards guidance and provider-described features from independent validation.
+- No application code, dependency installation, participant contact, research result, content/audio approval, commit, or push was performed.
