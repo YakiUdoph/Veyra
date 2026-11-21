@@ -108,6 +108,8 @@
 - **Acceptance criteria:** Reviewer qualifications, locale choices, style guide, source attribution, draft/review/approval states, dispute handling, re-review/versioning, and specialist requirements for Mandarin, Korean, `pt-BR`, and `pt-PT` are approved. Interface-resource localization is defined separately from instructional/lesson localization. English remains the initial instructional locale; any future instructional locale requires independently reviewed source explanations, phrases, exercises, audio, policy/support boundaries, and release evidence.
 - **Tests/checks:** Pilot entries pass the workflow with auditable feedback; reviewers explicitly approve locale metadata; tests demonstrate that interface-language changes do not imply or silently create translated lesson content.
 - **Evidence:** Content and localization style guides, reviewer agreement/process, locale/resource ownership matrix, and pilot review records.
+- **Preparation evidence:** `docs/content/german-accommodation-module-spec.md` proposes a reusable locale-aware content contract, an explicitly unreviewed `de-DE` accommodation pilot, deterministic exercises, a review/status workflow, correction controls, and publication gates. It is not an approved style guide, reviewer process, locale decision, or pilot review record.
+- **Remaining:** Complete T1.3/T1.4; approve reviewer qualifications, locale/style/source/IP rules, agreements, dispute and re-review processes; appoint qualified reviewers; review every pilot field; resolve issues; and record exact-version approval and pilot evidence.
 
 ### T1.7 — Define audio and illustration production/licensing — TODO
 
@@ -115,6 +117,8 @@
 - **Acceptance criteria:** Speaker/source, locale, consent/license, recording specification, quality review, file format, storage, replacement, cost, and illustration provenance processes are approved.
 - **Tests/checks:** Pilot assets pass linguistic, audio/visual quality, accessibility, metadata, and license checks.
 - **Evidence:** Asset policy, license templates/records, technical spec, and pilot approval.
+- **Preparation evidence:** `docs/content/german-accommodation-module-spec.md` proposes audio reference metadata and rights, linguistic, technical, accessibility, versioning, withdrawal, and replacement acceptance criteria. No speaker, recording, license, consent, cost, storage decision, illustration, QA result, or pilot asset exists.
+- **Remaining:** Complete T1.4/T1.6; approve the asset policy, license/consent terms, recording/delivery specification, storage and replacement process, costs, and illustration provenance rules; then produce and approve licensed pilot assets.
 
 ### T1.8 — Approve technical decision records — TODO
 

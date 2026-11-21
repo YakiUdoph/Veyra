@@ -292,3 +292,42 @@ No application build, unit test, browser test, security scan, accessibility scan
 - Read the seven governance documents and both existing decision records before editing; inspected T1.3 and its dependency chain; and inventoried the repository for the protected playbook.
 - Checked primary/public sources dated 2026-11-21 from the Council of Europe, Duolingo, Babbel, Pimsleur, and Anki. The research plan distinguishes standards guidance and provider-described features from independent validation.
 - No application code, dependency installation, participant contact, research result, content/audio approval, commit, or push was performed.
+
+## 2026-11-21 — First German accommodation content specification
+
+### CONFIRMED
+
+- T1.6 remains `TODO` and depends on incomplete T1.3 and T1.4. T1.7 remains `TODO` and depends on incomplete T1.4 and T1.6.
+- No qualified linguistic reviewer, approved style guide, reviewer agreement, approved `de-DE` locale decision, reviewed pilot, speaker, audio, illustration, license, consent, production cost, storage decision, or asset QA evidence exists.
+- No separate “Serial Hackathon Winner Playbook” artifact exists in the repository; the preservation requirements in `AGENTS.md` and `RULES.md` were not changed.
+
+### COMPLETED DOCUMENTATION WORK
+
+- Added `docs/content/german-accommodation-module-spec.md` as an explicitly `DRAFT`, unreviewed, unapproved, unpublished specification.
+- Proposed a reusable locale-aware contract for modules, situations, phrases, audio references, deterministic exercises, feedback, reviewer/approval evidence, versions, and correction history.
+- Proposed one Germany-focused `de-DE` accommodation situation with eight DRAFT phrases and five deterministic DRAFT exercises. No phrase, answer, note, or feedback is claimed linguistically approved.
+- Defined a proposed independent linguistic-review workflow; audio rights, performance, technical, and accessibility acceptance criteria; and the gated `DRAFT` → `REVIEWED` → `APPROVED` → `PUBLISHED` → `RETIRED` lifecycle.
+- Added deny-by-default controls intended to prevent draft/unapproved content from public paths, direct URLs, search/indexing, client payloads, caches, releases, and learner progress.
+- Added partial preparation-evidence and remaining-work notes to T1.6 and T1.7 without changing their IDs, dependencies, acceptance criteria, checks, evidence requirements, or `TODO` status.
+
+### REFERENCES CHECKED
+
+- Checked current Germany-context terminology and accommodation guidance on 2026-11-21 using Goethe-Institut, Make it in Germany, and Verbraucherzentrale sources linked in the specification. These references do not provide Veyra with reviewer approval, reuse permission for protected lesson material, or legal advice.
+
+### UNKNOWN / UNRESOLVED
+
+- Whether founders approve this module for a first release, its `de-DE` scope, learner level, phrases, exercises, workflow, audio targets, or publication gates.
+- The final wording, meanings, variants, register, regional limitations, accepted answers, feedback, and contextual/safety explanations after qualified review.
+- Reviewer qualifications and appointment; source/copyright determination; legal-adjacent review; teen suitability approval; author/reviewer/speaker IP terms; and final role authority under the unfinished founder/entity agreement.
+- Audio speaker, consent/license, cost, recording, QA, storage/CDN, replacement, withdrawal, and illustration decisions.
+
+### BLOCKED
+
+- The draft cannot advance to `REVIEWED` until T1.3/T1.4 requirements permit the workflow to be approved and a qualified `de-DE` reviewer evaluates the exact version.
+- It cannot advance to `APPROVED` without resolved review issues, source/IP and safety evidence, and authorized content-owner approval.
+- It cannot advance to `PUBLISHED` without the remaining T1.6/T1.7 evidence, accepted licensed human audio, release validation, and later implementation authorization. No content import or public learning path exists.
+
+### Checks performed
+
+- Read the seven governance documents and all existing founder, technical, and product-validation records before editing; inspected the actual T1.6/T1.7 requirements and repository state.
+- No application code, dependency, generated/licensed audio, reviewer approval, legal conclusion, content publication, commit, or push was created or claimed.
