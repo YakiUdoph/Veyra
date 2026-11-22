@@ -63,6 +63,32 @@
 - **Checks:** Complete seven-document read, repository/Git inventory, primary-source verification dated 2026-11-21, task-dependency review, documentation link/whitespace review, `git diff --check`, and `git status --short`.
 - **Completion evidence:** `docs/decisions/TDR-0001-technical-foundation-candidates.md` and the dated technical-feasibility entry in `PROGRESS.md`.
 
+## 2A. Separately authorized local prototype
+
+### P0.1 — Build a local-only application foundation prototype — COMPLETED
+
+- **Dependencies:** D0.5; explicit technical-founder authorization in the 2026-11-21 local-prototype instruction.
+- **Authority boundary:** This is a minimal isolated technical/design spike permitted by the T1.8 test allowance. It is not T2.1, does not satisfy or bypass T1.8/T1.10, and does not authorize public deployment, participant research, personal-data collection, authentication, database work, billing, analytics, unreviewed learning content, or provider selection.
+- **Acceptance criteria:** A local Next.js App Router, TypeScript, and Tailwind prototype uses compatible pinned tooling; provides an original premium responsive public foundation, accessible navigation/components, an explicit English interface fallback, and honest planned-state representation of all eight tracks; contains no invented lessons/translations, personal-data collection, authentication, database, billing, external analytics/tracking, secrets, unlicensed assets, or public deployment; and remains clearly labeled as a local foundation prototype.
+- **Tests/checks:** Reproducible install, format check, lint, typecheck, focused unit tests, production build, applicable Playwright browser smoke checks, 320px and desktop viewport checks, keyboard navigation, reduced-motion behavior, no-horizontal-overflow check, and inspection for external SDK/tracker requests.
+- **Evidence:** Exact versions, files, commands, results, limitations, and local start instructions recorded in `PROGRESS.md`. Passing P0.1 does not complete T1.8, T1.9, T1.10, T2.1, or any launch gate.
+
+### P0.2 — Build a local interactive lesson prototype — COMPLETED
+
+- **Dependencies:** P0.1; explicit technical-founder authorization in the 2026-11-22 P0.2 instruction.
+- **Authority boundary:** This is a local, non-public interaction spike only. It is not T2.1, does not satisfy or bypass T1.8/T1.9/T1.10, and does not authorize participant research, production lessons, personal-data collection or persistence, authentication, database work, billing, analytics, deployment, learning-content publication, linguistic approval, or audio.
+- **Acceptance criteria:** Preserve the P0.1 landing page and visual foundation; add a clearly labeled German-accommodation prototype route using neutral English test fixtures rather than unreviewed German learning content; implement the complete situation, question, answer selection, deterministic feedback, next-question, completion, and restart sequence with temporary local state; provide semantic grouping, accessible labels/status/errors, visible focus, full keyboard operation, and responsive 320px/desktop layouts; and add no backend, external SDK, audio, fake history, statistics, review, achievement, or approval claim.
+- **Tests/checks:** Existing P0.1 checks remain passing; deterministic lesson unit tests; Playwright completion, incorrect-answer, restart, keyboard, 320px, desktop, no-horizontal-overflow, and no-external-request checks; format, lint, typecheck, production build, and `git diff --check`.
+- **Evidence:** Exact files, commands, results, limitations, and local URL recorded in `PROGRESS.md`. Passing P0.2 does not complete T1.8, T1.9, T1.10, T2.1, T3.2, T3.6, or any launch/content gate.
+
+### P0.2.1 — Refine the local lesson interface — COMPLETED
+
+- **Dependencies:** P0.2; explicit technical-founder authorization in the P0.2 lesson UI refinement instruction.
+- **Authority boundary:** Refine only the existing local lesson presentation. Preserve the neutral test fixture, deterministic behavior, temporary local state, prototype restrictions, P0.1 public foundation, and every existing gated task status.
+- **Acceptance criteria:** Replace oversized question typography with a compact readable educational hierarchy; reduce unnecessary lesson scrolling; preserve comfortable touch targets; expose selected, correct, and incorrect answer states using text and structure as well as color; keep feedback supportive; add accessible progress using existing question state; and preserve keyboard/screen-reader semantics, cream/forest visual identity, 320px and desktop layouts, and existing functionality without a dependency, animation, backend, or broad redesign.
+- **Tests/checks:** Existing unit and browser suites; focused browser assertions for progress and selected/correct/incorrect states; keyboard, 320px/desktop, no-overflow, no-external-request, format, lint, typecheck, production build, and `git diff --check`.
+- **Evidence:** Verified files, commands, results, visual review, and remaining limitations recorded in `PROGRESS.md`. Passing this refinement does not complete T1.8, T1.9, T1.10, T2.1, T3.2, T3.6, or any launch/content gate.
+
 ## 3. Phase 1 — decisions and discovery
 
 ### T1.1 — Resolve founder governance — IN PROGRESS

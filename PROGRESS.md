@@ -472,3 +472,137 @@ No application build, unit test, browser test, security scan, accessibility scan
 - `git diff --check` exited `0` with no whitespace-error output; Git emitted only LF-to-CRLF working-copy warnings.
 - `git status --short` showed the seven governance documents plus the founder decision, technical decision, and research plan modified. `git diff --cached --name-only` returned no paths.
 - No application code, package installation, participant research, payment/provider action, commit, or push was performed.
+
+## 2026-11-22 — P0.1 local-only application foundation prototype
+
+### AUTHORITY AND SCOPE
+
+- The technical founder explicitly authorized only the local prototype described by `P0.1`. The implementation does not execute or complete T2.1 and does not satisfy or bypass T1.8, T1.9, T1.10, or any launch gate.
+- The seven governance documents were read in full before implementation. A recursive repository and parent-tree search found no separate “Serial Hackathon Winner Playbook” artifact; the preservation rules in `AGENTS.md` and `RULES.md` were not changed.
+- No public deployment, account, authentication, database, personal-data collection, payment, subscription, analytics, tracker, external provider integration, lesson translation, reviewed learning content, image, external font, audio, or secret was added.
+
+### IMPLEMENTED
+
+- Completed a local Next.js App Router foundation with TypeScript and Tailwind CSS, exact package pins, `package-lock.json`, Node runtime pin, ESLint, Prettier, Vitest, Playwright, and reproducible scripts.
+- Added an original responsive public page using the proposed ivory, forest, coral, and paper roles; system font stacks only; semantic landmarks; a keyboard-visible skip link; public anchor navigation; planned-state cards for exactly eight English-to-target tracks; distinct `pt-BR` and `pt-PT` entries; and truthful local-prototype boundaries.
+- Added an English interface fallback resolver that does not infer from country/IP or mutate a target track. No other interface or instructional language is represented as available.
+- Added purposeful Next.js error and not-found states. No loading UI was added because the static local page has no asynchronous data boundary.
+- Added two focused Vitest files and one Playwright suite. The browser suite covers 320×800 and 1440×900 viewports, truthful content, all eight track cards, no horizontal overflow, skip-link/keyboard focus, reduced motion, and absence of external browser requests.
+- Added `scripts/run-e2e.mjs` to start the already-built local Next.js server on `127.0.0.1:3107`, wait for readiness, run Playwright, and terminate the owned server reproducibly on Windows.
+
+### VERIFIED TOOLCHAIN
+
+- Runtime observed: Node.js `24.18.0`; npm `11.16.0`. Current official Next.js, Node.js, Tailwind CSS, Vitest, Playwright, and npm-registry evidence was checked on 2026-11-22 before retaining exact pins.
+- Installed application packages: Next.js `16.4.6`, React/React DOM `19.3.1`, Tailwind CSS and `@tailwindcss/postcss` `4.3.5`.
+- Installed quality packages: TypeScript `6.0.3`, ESLint `9.39.5`, `eslint-config-next` `16.4.6`, Prettier `3.10.1`, Vitest `5.1.1`, Vite `8.3.8`, and Playwright `1.65.1`.
+- TypeScript `7.0.2` was rejected after an executed lint check showed that the TypeScript ESLint stack bundled with the current Next configuration does not support it. ESLint `10.15.0` was also rejected because current transitive Next lint plugins declare support only through ESLint 9. The compatible prototype pins are TypeScript `6.0.3` and ESLint `9.39.5`.
+
+### EXECUTED CHECKS
+
+- `npm.cmd install` — exited `0`; created the reproducible lockfile and installed the final clean top-level dependency tree.
+- `npm.cmd ci` — exited `0`; reproduced the final 387-package install from `package-lock.json`. The only warning was the recorded ESLint 9 support status.
+- `npm.cmd run format:check` — exited `0`; all matched files use Prettier formatting.
+- `npm.cmd run lint` — exited `0` with no findings.
+- `npm.cmd run typecheck` — exited `0`.
+- `npm.cmd run test` — exited `0`; 2 files and 5 assertions passed.
+- `npm.cmd run build` — exited `0`; Next.js compiled, type-checked, and statically generated `/` and `/_not-found`.
+- `npm.cmd run test:e2e` — exited `0`; the standalone script rebuilt the production bundle, then 6/6 Chromium checks passed across the 320px and desktop projects.
+- Manual screenshot inspection was performed at 320×800 and 1440×900. An awkward narrow heading wrap observed in the first mobile capture was corrected, and the final browser suite reconfirmed no horizontal overflow.
+- Keyboard verification confirmed the skip link receives focus, becomes visible, navigates to `#main-content`, and hands focus progression to the first main action; focus styling and reduced-motion behavior were also checked in Chromium.
+- Browser request inspection recorded no non-local browser request during either viewport project.
+- Color calculations recorded contrast ratios of 13.63:1 for forest-950 on ivory-50, 9.97:1 for forest-800/paper in either direction, and 7.59:1 for the light coral emphasis on forest-950. Coral-600/paper is 4.01:1 and is limited to large text, focus/non-text emphasis, and decoration rather than normal body copy.
+- `npm.cmd audit --omit=dev --audit-level=high` and `npm.cmd audit --audit-level=high` each exited `0` with `found 0 vulnerabilities` on the current advisory data.
+- The top-level dependency/license inventory contained only MIT and Apache-2.0 packages. A source scan found no secret, tracker-provider, external-provider, or HTTPS endpoint pattern in prototype source.
+- `git diff --check` exited `0`; no commit, push, public deployment, or external account action was performed.
+
+### LIMITS AND REMAINING GATES
+
+- ESLint `9.39.5` is marked superseded by npm even though it is the release line supported by the current Next lint plugin peer ranges. This tooling lag is acceptable only for this local prototype and must be revisited during a future authorized technical-baseline decision.
+- The manual checks did not include a screen-reader session, 200%/400% zoom matrix, real mobile hardware, multiple browsers, or public/network deployment. P0.1 does not claim those later validation gates.
+- The generated visual-check screenshots and Playwright traces/reports are local ignored test artifacts under `test-results/`; they contain no personal data and are not product assets.
+- T1.8, T1.9, T1.10, T2.1, authentication, database, content publication, audio, billing, research, legal eligibility, cleared brand/domain/favicon, private testing, and public launch all remain incomplete or blocked according to their existing requirements.
+
+### LOCAL START
+
+1. Install Node.js `24.18.0` (the exact local pin in `.nvmrc`).
+2. From the repository root run `npm.cmd ci` on Windows PowerShell when the `npm.ps1` shim is blocked, otherwise `npm ci`.
+3. Run `npm.cmd run dev` (or `npm run dev`) and open the local URL printed by Next.js, normally `http://localhost:3000`.
+4. For the verified production-style local path, run `npm.cmd run build` followed by `npm.cmd run start`.
+
+## 2026-11-22 — P0.2 local interactive lesson prototype
+
+### AUTHORITY AND SCOPE
+
+- The technical founder explicitly authorized only the local, non-public P0.2 interaction prototype. This work does not execute or complete T2.1 and does not satisfy or bypass T1.8, T1.9, T1.10, T3.2, T3.6, or any launch/content gate.
+- The seven governance documents, existing P0.1 implementation, and `docs/content/german-accommodation-module-spec.md` were read before implementation. A recursive repository and parent-tree search again found no separate “Serial Hackathon Winner Playbook” artifact; its preservation rules were not changed.
+- The draft content specification informed only the situation/question/feedback sequence. No draft German phrase, translation, pronunciation claim, review claim, or audio was copied into the application.
+- No public deployment, participant research, personal-data collection or persistence, authentication, database, billing, analytics, tracking, external SDK, external content request, lesson publication, audio, image, font, or new package was added.
+
+### IMPLEMENTED
+
+- Added the static local route `/prototype/german-accommodation`, linked after the existing P0.1 landing actions so the established landing-page keyboard order remains intact.
+- Added a visibly labeled English-only accommodation-context test fixture with three questions. The content tests reading and clarification behavior without asserting German-language correctness.
+- Added pure typed evaluation and next-question functions with explicit correct, incorrect, and invalid-answer results. The interaction uses no LLM or external service.
+- Added the complete situation → question → selection → deterministic feedback → next-question → completion sequence, plus missing-selection handling and restart controls.
+- Kept state in React memory only. Refreshing or leaving the route discards the session; no result, history, statistic, achievement, cookie, browser storage, or personal data is created.
+- Added semantic fieldsets/radio labels, status and alert feedback, visible focus, focus movement for errors/questions/completion/restart, minimum-size controls, keyboard operation, reduced-motion-compatible existing styles, and responsive focused layouts consistent with the P0.1 visual system.
+- Added four deterministic unit assertions and six new browser executions across the configured 320×800 and 1440×900 projects. The existing five P0.1 unit assertions and six P0.1 browser executions remain passing.
+
+### EXECUTED CHECKS
+
+- `npm.cmd run format` — exited `0`; all edited application/test files were formatted. No documentation formatter was applied.
+- `npm.cmd run verify` — exited `0`: Prettier check passed; ESLint passed with no findings; TypeScript passed; Vitest passed 3 files/9 assertions; Next.js production build passed and statically generated `/`, `/_not-found`, and `/prototype/german-accommodation`.
+- `npm.cmd run test:e2e` — final run exited `0`; 12/12 Chromium checks passed across `mobile-320` (320×800) and `desktop` (1440×900). Coverage includes the P0.1 suite, complete/restart flow, required-selection error, incorrect deterministic feedback, keyboard operation, focus movement, responsive no-overflow, and no non-local browser request.
+- The first P0.2 browser run built successfully but reported six assertion failures: the new landing link had changed the P0.1 expected tab order, Playwright matched Next.js's hidden route-announcer alert as well as the prototype alert, and the keyboard test assumed two tab stops after a radio group. The link was moved after the existing landing actions and the assertions were corrected to the actual owned alert and native radio-group tab behavior; no check was disabled.
+- `npx.cmd playwright screenshot --viewport-size="320,800" ...` and `--viewport-size="1440,900" ...` — exited `0`; manual inspection of the ignored local captures confirmed the focused introduction layout at both required widths, readable wrapping, clear boundaries, and no visible horizontal clipping. The 320px page correctly continues by vertical scrolling.
+- React best-practices review found no fetch waterfall, unnecessary dependency, broad import, derived-state effect, heavy client serialization, or unsafe rendering pattern. Completion-heading focus was added during this review.
+- A focused source scan found no application `fetch`, external URL, browser storage, cookie, analytics, tracking, audio element, unsafe HTML injection, or client environment-secret use. The only `fetch`/HTTP entries are the existing local E2E server readiness check.
+- `git diff --check` exited `0` after documentation finalization with only Git's existing LF-to-CRLF working-copy warnings. `git diff --cached --name-only` returned no paths. No commit, push, public deployment, or external account action was performed.
+
+### LIMITATIONS AND REMAINING GATES
+
+- The fixture is not a production German lesson and provides no German vocabulary, translation, pronunciation, linguistic review, progress scoring, persistence, audio, or learning-effectiveness claim.
+- The prototype has no backend or cross-session behavior. Refreshing clears the temporary interaction state by design.
+- The checks do not constitute a screen-reader session, 200%/400% zoom matrix, real mobile hardware test, multi-browser support decision, participant usability research, content review, or production accessibility approval.
+- T1.8, T1.9, T1.10, T2.1, T3.2, T3.6, content/audio publication, private participant testing, and public launch remain incomplete or blocked under their existing requirements.
+
+### LOCAL START
+
+1. From the repository root, run `npm.cmd ci` in Windows PowerShell when the `npm.ps1` shim is blocked, otherwise `npm ci`.
+2. Run `npm.cmd run dev` (or `npm run dev`).
+3. Open `http://localhost:3000/prototype/german-accommodation`.
+
+## 2026-11-22 — P0.2.1 lesson interface refinement
+
+### AUTHORITY AND SCOPE
+
+- The technical founder authorized refinement of only the existing local P0.2 lesson interface. The neutral fixture, deterministic evaluation, in-memory state, route, landing-page behavior, and prototype restrictions remain unchanged.
+- The seven governance documents and existing lesson route, component, fixture, styles, unit tests, and browser tests were inspected before editing. The supplied/current mobile capture showed that the lesson inherited an oversized serif marketing heading and placed answer/feedback actions too far down the small-screen flow.
+- No dependency, fixture answer, lesson claim, German content, persistence, backend, authentication, database, billing, analytics, external SDK, audio, animation, deployment, or public behavior was added.
+
+### IMPLEMENTED
+
+- Gave question screens a compact system-sans educational heading with a `1.3rem` mobile size and restrained desktop scaling, leaving the existing cream, paper, forest, coral, and rounded-card visual language intact.
+- Added a native accessible progress element labeled with the current question and total. It is driven only by the existing `questionIndex` and fixture length.
+- Added visible textual answer-state labels: `Selected`, `Correct answer`, and `Selected — incorrect`. Correct and incorrect answers also use distinct border/background treatments, so state is not conveyed by color alone.
+- Changed feedback headings to the concise supportive labels `Good choice` and `Review the detail` while preserving the fixture's deterministic feedback text.
+- Tightened only lesson-question spacing, answer gaps, feedback padding, and mobile boundary spacing. Answer rows remain at least 48 CSS pixels high on mobile and the action controls remain at least 44 CSS pixels high.
+- Kept semantic radio inputs, fieldset/legend grouping, disabled answered state, programmatic error/status feedback, visible focus, question/completion focus movement, restart, and keyboard operation.
+- Extended the existing incorrect-answer browser journey to verify semantic progress values, pre-submit selected state, post-submit correct/incorrect classes and visible labels, progress advancement, and that the complete next-question button fits inside the 320×800 viewport.
+
+### EXECUTED CHECKS
+
+- `npm.cmd run format` — exited `0`; edited source and test files use the existing Prettier rules.
+- `npm.cmd run verify` — exited `0`: format check passed; ESLint passed with no findings; TypeScript passed; Vitest passed 3 files/9 assertions; the Next.js production build passed and statically generated `/prototype/german-accommodation`.
+- `npm.cmd run test:e2e` — final run exited `0`; 12/12 Chromium executions passed across `mobile-320` (320×800) and `desktop` (1440×900). Existing P0.1/P0.2 completion, restart, error, keyboard, focus, reduced-motion, overflow, and no-external-request coverage remains green.
+- Focused browser evidence confirms progress `1/3` then `2/3`, explicit `Selected`, `Correct answer`, and `Selected — incorrect` labels, deterministic incorrect feedback, and a fully visible next-question action after feedback at 320×800.
+- Local full-page screenshots of the incorrect-answer state were captured and inspected at 320×800 and 1440×900. They showed readable question hierarchy, comfortable answer targets, explicit non-color state labels, concise feedback, and the preserved visual identity. The final mobile spacing adjustment was additionally verified by the stricter full-button viewport assertion.
+- The React best-practices review found no new data fetching, dependency, broad import, unsafe rendering, unnecessary effect, or client/server boundary issue. The state labels are derived during render from existing primitive state rather than stored separately.
+- A focused source scan found no external URL, application fetch, browser storage, cookie, analytics, audio, or unsafe HTML addition.
+- `git diff --check` exited `0` after the documentation update with only Git's existing LF-to-CRLF working-copy warnings. `git diff --cached --name-only` returned no paths. No file was staged, committed, pushed, or deployed.
+
+### LIMITATIONS AND REMAINING GATES
+
+- This remains an English-only interaction fixture, not reviewed German learning content. It has no pronunciation, audio, progress persistence, learning-effectiveness evidence, or production status.
+- Browser automation verifies semantics and keyboard behavior but is not a completed manual screen-reader session, 200%/400% zoom matrix, real-device test, or multi-browser support review.
+- T1.8, T1.9, T1.10, T2.1, T3.2, T3.6, content/audio publication, participant testing, deployment, and public launch remain unchanged and incomplete or blocked under their existing gates.
