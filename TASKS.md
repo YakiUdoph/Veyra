@@ -97,6 +97,14 @@
 - **Tests/checks:** Schema-validation, lifecycle-transition, independent-approval, unpublished-content-rejection, deterministic-scoring, and existing unit tests; complete local lesson browser flow at 320px and desktop with keyboard/state/network checks; format, lint, typecheck, production build, and `git diff --check`.
 - **Evidence:** Exact files, executed checks, results, lifecycle limits, local URL, and unresolved production/content/audio gates recorded in `PROGRESS.md`. Passing P0.3 does not complete T1.8, T1.9, T1.10, T2.1, T3.1, T3.2, T3.6, or any launch/content gate.
 
+### P0.4 — Build a local pronunciation-audio foundation — COMPLETED
+
+- **Dependencies:** P0.3; explicit technical-founder authorization in the 2026-11-23 pronunciation-foundation instruction.
+- **Authority boundary:** Build only reusable local metadata validation and accessible playback controls for future licensed human recordings. This task does not authorize an audio provider, generated or cloned audio, a real recording, invented license/reviewer evidence, production content, public deployment, or completion of T1.7/T3.3/T3.5.
+- **Acceptance criteria:** Model explicit pronunciation locales for `de-DE`, `fr-FR`, `it-IT`, `ko-KR`, `zh-CN`, `pt-BR`, `pt-PT`, and one configured Spanish locale; extend audio references with immutable asset identity, exact locale/content version, human-speaker metadata, license evidence, reviewer decision, checksum, and lifecycle state; reject missing, non-local, locale-mismatched, unlicensed, unreviewed, withdrawn, or content/checksum-mismatched audio from production publication and playback; add a reusable no-autoplay player with play, pause, replay, loading, unavailable, and error states; preserve the existing prototype and homepage; add no provider, recording, dependency, persistence, or external request.
+- **Tests/checks:** Unit coverage for locale policy, audio metadata/publication gates, locale mismatch, missing assets, rights/review/checksum/content-version failures, and playable-asset resolution; Playwright coverage for unavailable-audio semantics, disabled controls, keyboard access, responsive behavior, and no external request; format, lint, typecheck, production build, existing suites, and `git diff --check`.
+- **Evidence:** Exact files, commands, outcomes, limitations, and next evidence required recorded in `PROGRESS.md`. Passing P0.4 does not approve or complete T1.7, T3.3, T3.5, any recording/license/review, or any launch gate.
+
 ## 3. Phase 1 — decisions and discovery
 
 ### T1.1 — Resolve founder governance — IN PROGRESS

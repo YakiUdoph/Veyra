@@ -11,6 +11,7 @@ export const germanAccommodationPrototypeFixture = {
   contentSource: "prototype-fixture",
   targetTrackId: "de",
   targetLocale: "de-DE",
+  spanishPronunciationLocale: "es-ES",
   instructionalLocale: "en",
   contentVersion: "0.3.0-prototype",
   approvalStatus: "draft",

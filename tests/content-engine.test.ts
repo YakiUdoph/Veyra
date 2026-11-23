@@ -43,6 +43,7 @@ describe("lesson schema and deterministic scoring", () => {
   it("accepts the explicit draft prototype schema", () => {
     expect(validateLessonSchema(fixture)).toEqual({ valid: true, issues: [] });
     expect(fixture.targetLocale).toBe("de-DE");
+    expect(fixture.spanishPronunciationLocale).toBe("es-ES");
     expect(fixture.instructionalLocale).toBe("en");
     expect(fixture.audioAssetReferences).toEqual([]);
   });
@@ -155,8 +156,32 @@ describe("content lifecycle and publication access", () => {
       phraseId: "test-phrase",
       contentVersion: fixture.contentVersion,
       locale: fixture.targetLocale,
-      status: "accepted",
+      purpose: "target-pronunciation",
+      status: "available",
+      assetIdentity: {
+        storageKey: "audio/test-audio.ogg",
+        version: "test-version",
+      },
+      assetPath: "/audio/test-audio.ogg",
       checksum: "test-only-checksum",
+      speaker: {
+        speakerRef: "test-human-speaker",
+        locale: fixture.targetLocale,
+        recordingMethod: "human-recorded",
+        consentEvidenceRef: "test-only-consent-evidence",
+      },
+      license: {
+        evidenceRef: "test-only-license-evidence",
+        status: "approved",
+        commercialUseApproved: true,
+      },
+      review: {
+        reviewerRef: "test-audio-reviewer",
+        status: "approved",
+        reviewedAt: "2026-11-23T00:00:00.000Z",
+        contentVersion: fixture.contentVersion,
+        checksum: "test-only-checksum",
+      },
     } as const;
     const approved = {
       ...fixture,
@@ -194,6 +219,81 @@ describe("content lifecycle and publication access", () => {
     expect(lessonForAudience(published, "production")).toBe(published);
     expect(transitionLesson(published, "retired").approvalStatus).toBe(
       "retired",
+    );
+  });
+
+  it("blocks production publication when audio lifecycle evidence is removed", () => {
+    const linguistic = approval("linguistic-reviewer", "test-linguist");
+    const contentApproval = approval(
+      "content-approver",
+      "test-content-approver",
+    );
+    const audioAsset = {
+      id: "test-audio",
+      phraseId: "test-phrase",
+      contentVersion: fixture.contentVersion,
+      locale: fixture.targetLocale,
+      purpose: "target-pronunciation",
+      status: "available",
+      assetIdentity: { storageKey: "test", version: "test" },
+      assetPath: "/audio/test.ogg",
+      checksum: "test-checksum",
+      speaker: {
+        speakerRef: "test-speaker",
+        locale: fixture.targetLocale,
+        recordingMethod: "human-recorded",
+        consentEvidenceRef: "test-consent",
+      },
+      license: {
+        evidenceRef: "",
+        status: "pending",
+        commercialUseApproved: false,
+      },
+      review: {
+        reviewerRef: null,
+        status: "unreviewed",
+        reviewedAt: null,
+        contentVersion: null,
+        checksum: null,
+      },
+    } as const;
+    const lesson = {
+      ...fixture,
+      contentSource: "production-content",
+      approvalStatus: "approved",
+      audioAssetReferences: [audioAsset],
+      review: { ...fixture.review, records: [linguistic, contentApproval] },
+      situations: [
+        {
+          ...fixture.situations[0],
+          phrases: [
+            {
+              id: "test-phrase",
+              instructionalText: "Test-only source text",
+              targetText: "TEST_ONLY_TARGET_TEXT",
+              targetLocale: fixture.targetLocale,
+              contentVersion: fixture.contentVersion,
+              approvalStatus: "approved",
+              audioAssetRef: audioAsset,
+              review: {
+                authorRef: "test-author",
+                records: [linguistic, contentApproval],
+              },
+            },
+          ],
+        },
+      ],
+    } satisfies LessonDefinition;
+
+    const blockers = publicationBlockers(lesson);
+    expect(blockers).toContain(
+      "Phrase test-phrase: Approved commercial-use license evidence is required.",
+    );
+    expect(blockers).toContain(
+      "Phrase test-phrase: Qualified review of the exact audio asset is required.",
+    );
+    expect(() => transitionLesson(lesson, "published")).toThrow(
+      "Publication blocked",
     );
   });
 

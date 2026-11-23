@@ -649,3 +649,49 @@ No application build, unit test, browser test, security scan, accessibility scan
 1. From the repository root run `npm.cmd ci` in Windows PowerShell when the `npm.ps1` shim is blocked, otherwise `npm ci`.
 2. Run `npm.cmd run dev` (or `npm run dev`).
 3. Open `http://localhost:3000/prototype/german-accommodation`.
+
+## 2026-11-23 — P0.3 preservation and P0.4 local pronunciation-audio foundation
+
+### PHASE A — P0.3 PRESERVATION
+
+- Read all seven governance documents and inspected the tracked/untracked P0.3 diff, current branch, recent history, ignored artifacts, staged state, and the separate `AGENTS.md` modification.
+- Confirmed that the intended P0.3 set consists of the typed content engine, explicitly labeled prototype fixture, reusable renderer, replacement unit coverage, format-boundary update, and truthful `TASKS.md`/`PROGRESS.md` evidence. No package version, lockfile, external SDK, audio, provider, secret, personal data, or production approval was added.
+- `npm.cmd run verify` exited `0`: formatting, ESLint, TypeScript, 3 Vitest files/14 assertions, and the Next.js production build passed.
+- `npm.cmd run test:e2e` exited `0`: 12/12 Chromium executions passed across `mobile-320` and `desktop`.
+- `git diff --check` and the staged diff check exited `0`; only existing Windows LF-to-CRLF warnings were emitted. Generated `.next`, `test-results`, `node_modules`, `next-env.d.ts`, and `tsconfig.tsbuildinfo` paths remained ignored.
+- Staged only the verified P0.3 files. The unrelated `AGENTS.md` modification was not staged or committed.
+- Created commit `9d8c881de30ce8ad52bb8f98a16cab8f89a1f9a5` with message `feat: add reusable Veyra learning content engine` and pushed `main` successfully from `d6def2a` to `9d8c881` on `origin/main`.
+
+### PHASE B — AUTHORITY AND SCOPE
+
+- The technical founder explicitly authorized P0.4 only after Phase A succeeded. This is a local, non-public pronunciation-audio foundation for future licensed human recordings; it does not approve or complete T1.7, T3.3, T3.5, any provider, recording, license, linguistic review, production content, deployment, or launch gate.
+- Read the installed Next.js 16.4.6 guidance for Client Components, the server/client boundary, serializable props, and public assets before implementation. No external documentation assumption was used in place of the installed version.
+- No generated/fake audio, voice clone, provider SDK, paid service, dependency, database, authentication, billing, analytics, external request, recording, reviewer identity, or rights approval was added or invented.
+
+### IMPLEMENTED
+
+- Added an explicit pronunciation-locale policy for `de-DE`, `fr-FR`, `it-IT`, `ko-KR`, `zh-CN`, `pt-BR`, `pt-PT`, and one release-configured `es-REGION` locale. Generic or malformed Spanish locales fail closed.
+- Expanded audio references with immutable storage identity/version, local asset path, exact phrase/content version/locale, target-pronunciation purpose, human-speaker and consent references, commercial-license evidence/status, qualified-review decision/date/content/checksum linkage, asset lifecycle, and checksum.
+- Added reusable validation and playback resolution that reject missing, withdrawn/replaced, unsupported or mismatched locale, mismatched phrase/content version, non-local or missing path, missing identity/checksum, absent speaker/consent evidence, unapproved/expired/withdrawn licensing, and unreviewed or checksum/content-mismatched review. Playback resolution returns no source when any gate fails, preventing silent locale substitution.
+- Integrated the same audio gates into production-content publication validation and strengthened manifest matching across identity, phrase, content version, locale, path, version, and checksum.
+- Added a reusable no-autoplay client audio player with play, pause, replay, loading, paused, finished, unavailable, retry, and error behavior; polite/alert status messaging; named controls; unique accessible labeling; and conservative `preload="none"` behavior.
+- The existing audio-free fixture displays an honest unavailable state with disabled controls and no `<audio>` source. Existing homepage, lesson sequence, feedback, completion, restart, keyboard/focus behavior, and styling remain intact.
+
+### EXECUTED CHECKS
+
+- `npm.cmd run format` exited `0` using the existing Prettier configuration.
+- Focused `npm.cmd run lint`, `npm.cmd run typecheck`, and `npm.cmd run test` checks exited `0`; the final unit suite contains 4 files/22 assertions.
+- Final `npm.cmd run verify` exited `0`: format check, ESLint, TypeScript, 4 Vitest files/22 assertions, and the Next.js production build passed; `/`, `/_not-found`, and `/prototype/german-accommodation` were statically generated.
+- The first P0.4 `npm.cmd run test:e2e` build passed and 12 existing executions passed, but the two new audio assertions failed because Playwright's non-exact `Play audio` selector also matched `Replay audio`. The selector was corrected to the exact accessible name; no product behavior or check was disabled.
+- Final `npm.cmd run test:e2e` exited `0`: 14/14 Chromium executions passed across 320×800 and 1440×900, including the accessible unavailable state, disabled named controls, absence of an audio element/source, existing lesson flows, keyboard/focus, reduced motion, no overflow, and no non-local request coverage.
+- Full-page screenshots at 320×800 and 1440×900 were inspected from ignored `test-results` output. The panel wraps without clipping, preserves the established ivory/forest presentation, and does not displace or alter the existing lesson action.
+- React best-practices review found no fetch waterfall, broad/barrel import, third-party client code, server/client serialization problem, derived-state effect, unnecessary memoization, global listener, storage use, unsafe rendering, or new dependency. Browser-only media state remains within the smallest interactive client component.
+- A focused source/diff scan found no audio binary, external URL/provider, secret-shaped value, personal data, unsafe HTML, storage/cookie/analytics/tracker code, generated artifact, fabricated license/reviewer approval, or unrelated application change.
+- `git diff --check` exited `0` after documentation finalization with only existing LF-to-CRLF warnings. `git diff --cached --name-only` returned no paths; no Phase B file was staged, committed, pushed, or deployed.
+
+### LIMITATIONS AND NEXT EVIDENCE
+
+- No playable recording exists, so play/pause/replay/loading/error transitions are implemented but were not exercised against a real asset. Browser evidence covers the required accessibility and unavailable-audio behavior only.
+- Test-only metadata demonstrates validators and cannot serve as a real speaker, consent, license, reviewer, audio-quality, storage, or publication record. No filesystem ingestion, MIME/duration/malware validation, CDN/cache authorization, or durable audit trail exists.
+- Before any real audio can play or publish, T1.4/T1.6/T1.7 dependencies must be satisfied; founders must approve the audio/asset process; each locale needs an approved profile; a lawfully recorded human asset must have retained speaker consent and commercial license evidence; a qualified locale reviewer must approve the exact checksum/content version; and later authorized storage/delivery work must verify the actual file and access behavior.
+- Manual screen-reader, 200%/400% zoom, real-device, multi-browser, and actual-audio quality/listening checks remain unperformed. T1.7, T3.3, T3.5, production content/audio publication, deployment, and launch remain incomplete or blocked.

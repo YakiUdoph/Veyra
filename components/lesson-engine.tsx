@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+import { PronunciationAudioPlayer } from "@/components/pronunciation-audio-player";
 import {
   evaluateExercise,
   getLessonExercises,
@@ -87,6 +88,11 @@ export function LessonEngine({ lesson }: { lesson: LessonDefinition }) {
             reviewed learning content.
           </p>
         </div>
+        <PronunciationAudioPlayer
+          audio={null}
+          label="No recording is attached to this prototype fixture."
+          unavailableMessage="No licensed, locale-matched, reviewed pronunciation recording is available for this test fixture."
+        />
         <button className="button button-primary" onClick={beginLesson}>
           Begin test interaction
         </button>

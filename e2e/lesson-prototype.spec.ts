@@ -11,6 +11,31 @@ async function answer(page: Page, label: string) {
 }
 
 test.describe("local lesson prototype", () => {
+  test("exposes an accessible unavailable-audio state without substitution", async ({
+    page,
+  }) => {
+    await page.goto("/prototype/german-accommodation");
+
+    const player = page.getByRole("region", { name: "Pronunciation audio" });
+    await expect(player).toBeVisible();
+    await expect(
+      player.getByText(
+        "No licensed, locale-matched, reviewed pronunciation recording is available for this test fixture.",
+      ),
+    ).toBeVisible();
+    await expect(
+      player.getByRole("button", { name: "Play audio", exact: true }),
+    ).toBeDisabled();
+    await expect(
+      player.getByRole("button", { name: "Replay audio" }),
+    ).toBeDisabled();
+    await expect(player.locator("audio")).toHaveCount(0);
+
+    await expect(player.getByRole("heading", { level: 2 })).toHaveText(
+      "Pronunciation audio",
+    );
+  });
+
   test("completes and restarts the deterministic flow", async ({ page }) => {
     await begin(page);
 

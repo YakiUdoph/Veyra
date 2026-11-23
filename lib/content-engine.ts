@@ -1,3 +1,11 @@
+import {
+  audioPublicationIssues,
+  createAudioLocalePolicy,
+  type AudioAssetReference,
+} from "./pronunciation-audio";
+
+export type { AudioAssetReference } from "./pronunciation-audio";
+
 export const contentLifecycleStates = [
   "draft",
   "reviewed",
@@ -21,15 +29,6 @@ export type ReviewRecord = Readonly<{
 export type ReviewMetadata = Readonly<{
   authorRef: string;
   records: readonly ReviewRecord[];
-}>;
-
-export type AudioAssetReference = Readonly<{
-  id: string;
-  phraseId: string;
-  contentVersion: string;
-  locale: string;
-  status: "missing" | "accepted" | "withdrawn" | "replaced";
-  checksum: string | null;
 }>;
 
 export type PhraseDefinition = Readonly<{
@@ -76,6 +75,7 @@ export type LessonDefinition = Readonly<{
   contentSource: "prototype-fixture" | "production-content";
   targetTrackId: string;
   targetLocale: string;
+  spanishPronunciationLocale: string;
   instructionalLocale: string;
   contentVersion: string;
   approvalStatus: ContentLifecycleState;
@@ -156,6 +156,22 @@ export function validateLessonSchema(
   if (!hasText(lesson.targetLocale)) {
     issues.push("Target-language locale is required.");
   }
+  try {
+    const localePolicy = createAudioLocalePolicy(
+      lesson.spanishPronunciationLocale,
+    );
+    if (
+      !localePolicy.supportedLocales.some(
+        (locale) => locale === lesson.targetLocale,
+      )
+    ) {
+      issues.push(
+        "Target-language locale is not a supported pronunciation locale.",
+      );
+    }
+  } catch {
+    issues.push("Configured Spanish pronunciation locale is invalid.");
+  }
   if (!hasText(lesson.instructionalLocale)) {
     issues.push("Instructional locale is required.");
   }
@@ -227,6 +243,13 @@ export function publicationBlockers(
 ): readonly string[] {
   const blockers = [...validateLessonSchema(lesson).issues];
   const phrases = lesson.situations.flatMap((situation) => situation.phrases);
+  let localePolicy: ReturnType<typeof createAudioLocalePolicy> | null = null;
+  try {
+    localePolicy = createAudioLocalePolicy(lesson.spanishPronunciationLocale);
+  } catch {
+    // Schema validation already records the invalid configuration. Publication
+    // remains fail-closed without attempting audio validation against it.
+  }
 
   if (lesson.contentSource !== "production-content") {
     blockers.push("Only production-content records may be published.");
@@ -246,15 +269,31 @@ export function publicationBlockers(
     if (phrase.approvalStatus !== "approved") {
       blockers.push(`Phrase ${phrase.id} is not approved.`);
     }
+    if (localePolicy) {
+      const audioIssues = audioPublicationIssues(phrase.audioAssetRef, {
+        phraseId: phrase.id,
+        contentVersion: phrase.contentVersion,
+        locale: phrase.targetLocale,
+        localePolicy,
+      });
+      blockers.push(
+        ...audioIssues.map((issue) => `Phrase ${phrase.id}: ${issue}`),
+      );
+    }
     if (
-      !phrase.audioAssetRef ||
-      phrase.audioAssetRef.status !== "accepted" ||
-      !phrase.audioAssetRef.checksum
-    ) {
-      blockers.push(`Phrase ${phrase.id} has no accepted audio asset.`);
-    } else if (
+      phrase.audioAssetRef &&
       !lesson.audioAssetReferences.some(
-        (asset) => asset.id === phrase.audioAssetRef?.id,
+        (asset) =>
+          asset.id === phrase.audioAssetRef?.id &&
+          asset.phraseId === phrase.audioAssetRef?.phraseId &&
+          asset.contentVersion === phrase.audioAssetRef?.contentVersion &&
+          asset.locale === phrase.audioAssetRef?.locale &&
+          asset.assetPath === phrase.audioAssetRef?.assetPath &&
+          asset.assetIdentity.storageKey ===
+            phrase.audioAssetRef?.assetIdentity.storageKey &&
+          asset.assetIdentity.version ===
+            phrase.audioAssetRef?.assetIdentity.version &&
+          asset.checksum === phrase.audioAssetRef?.checksum,
       )
     ) {
       blockers.push(`Phrase ${phrase.id} audio is not in the lesson manifest.`);
