@@ -606,3 +606,46 @@ No application build, unit test, browser test, security scan, accessibility scan
 - This remains an English-only interaction fixture, not reviewed German learning content. It has no pronunciation, audio, progress persistence, learning-effectiveness evidence, or production status.
 - Browser automation verifies semantics and keyboard behavior but is not a completed manual screen-reader session, 200%/400% zoom matrix, real-device test, or multi-browser support review.
 - T1.8, T1.9, T1.10, T2.1, T3.2, T3.6, content/audio publication, participant testing, deployment, and public launch remain unchanged and incomplete or blocked under their existing gates.
+
+## 2026-11-22 — P0.3 local learning content engine
+
+### AUTHORITY AND SCOPE
+
+- The technical founder authorized only a local, non-public reusable learning-content prototype. P0.3 does not execute T2.1 or complete/bypass T1.8, T1.9, T1.10, T3.1, T3.2, T3.6, research, legal, content, audio, deployment, or launch gates.
+- All seven governance documents and the existing P0.1/P0.2 implementation were read before implementation. No separate “Serial Hackathon Winner Playbook” artifact was present in the repository or parent tree; its preservation rules remain unchanged.
+- The current branch already contained the previously created/pushed P0.1/P0.2 commit `d6def2a`. P0.3 was not staged, committed, pushed, or deployed.
+- No database, authentication, billing, analytics, tracking, external SDK, German translation, pronunciation content, reviewer identity/approval, audio asset, or dependency was added.
+
+### IMPLEMENTED
+
+- Added a framework-neutral typed engine covering lesson, situation, phrase, single-select exercise, option, feedback, review record, audio-asset reference, locale, version, source, and lifecycle metadata.
+- Added ordered `draft` → `reviewed` → `approved` → `published` → `retired` transitions. Skipped transitions fail; review requires a matching independent linguistic approval; approval requires distinct independent linguistic/content reviewers; and publication fails closed unless the record is production content with complete schema, distinct approvals, at least one approved target phrase, and a checksummed accepted audio reference present in the lesson manifest.
+- Added separate prototype/production access. Prototype access accepts only records labeled `prototype-fixture`; production access accepts only valid `production-content` records in `published` state with no publication blocker. The existing draft fixture is rejected from production access.
+- Moved the German-accommodation interaction data out of the domain module into `fixtures/prototype/german-accommodation.ts`. It remains explicitly `draft`, `de-DE` target/`en` instructional, versioned `0.3.0-prototype`, with empty review records, no target phrases, and no audio references.
+- Replaced the route-specific client state implementation with a reusable `LessonEngine` renderer. The small server wrapper validates prototype access before passing the serializable fixture to the client engine.
+- Preserved the existing situation, deterministic three-exercise flow, incomplete/correct/incorrect/invalid evaluation, feedback, completion, restart, focus behavior, semantic radios/fieldset/status, visual answer states, responsive styling, and local-only/no-persistence behavior.
+- Extended the existing format scripts to cover the new `fixtures/**/*.ts` boundary. No package version or lockfile dependency changed.
+
+### EXECUTED CHECKS
+
+- `npm.cmd run format` — exited `0`; application, component, fixture, domain, test, E2E, script, and root configuration files match existing Prettier rules.
+- `npm.cmd run verify` — exited `0`: format check passed; ESLint passed with no findings; TypeScript passed; Vitest passed 3 files/14 assertions; and the production build passed, statically generating `/`, `/_not-found`, and `/prototype/german-accommodation`.
+- Unit coverage verifies valid fixture schema, malformed accepted-answer rejection, incomplete/correct/incorrect/invalid deterministic scoring, completion indexing, skipped/unapproved lifecycle rejection, distinct-reviewer enforcement, reviewed/approved transitions, fail-closed publication without phrases/audio, a fully test-only published→retired path, and production rejection of the draft fixture.
+- `npm.cmd run test:e2e` — exited `0`; 12/12 Chromium executions passed across `mobile-320` (320×800) and `desktop` (1440×900). Existing completion/restart, incomplete and incorrect feedback, progress/answer states, keyboard/focus, reduced-motion, no-overflow, and no-external-request checks remain green.
+- React best-practices review found no new fetch/data waterfall, external dependency, unsafe rendering, broad import, persistent state, or client/server boundary problem. Domain validation remains outside the client renderer, and UI state stays local and minimal.
+- A focused source scan found no application fetch, external URL, browser storage, cookie, analytics, tracker, audio element, unsafe HTML, or environment-secret addition.
+- `git diff --check` exited `0` after documentation finalization with only Git's existing LF-to-CRLF working-copy warnings. `git diff --cached --name-only` returned no paths. No P0.3 file was staged, committed, pushed, or deployed.
+
+### LIMITATIONS AND REMAINING GATES
+
+- The engine currently renders deterministic single-select exercises only. Its types can be extended later through separately approved work; matching, ordering, text entry, persistence, imports, administrative publishing, and content-version storage do not exist.
+- Lifecycle enforcement is an in-process typed prototype, not server authorization or a durable audit trail. Test-only reviewer/audio records prove state rules but are never routed or presented as real approvals/assets.
+- The fixture remains English-only interaction copy with no German phrase, translation, pronunciation, audio, linguistic approval, publication eligibility, progress persistence, or learning-effectiveness claim.
+- Browser automation is not a manual screen-reader session, real-device matrix, 200%/400% zoom review, multi-browser support decision, security review, or production content/publication validation.
+- T1.8, T1.9, T1.10, T2.1, T3.1, T3.2, T3.6, content/audio publication, participant testing, deployment, and public launch remain unchanged and incomplete or blocked under their existing requirements.
+
+### LOCAL START
+
+1. From the repository root run `npm.cmd ci` in Windows PowerShell when the `npm.ps1` shim is blocked, otherwise `npm ci`.
+2. Run `npm.cmd run dev` (or `npm run dev`).
+3. Open `http://localhost:3000/prototype/german-accommodation`.

@@ -89,6 +89,14 @@
 - **Tests/checks:** Existing unit and browser suites; focused browser assertions for progress and selected/correct/incorrect states; keyboard, 320px/desktop, no-overflow, no-external-request, format, lint, typecheck, production build, and `git diff --check`.
 - **Evidence:** Verified files, commands, results, visual review, and remaining limitations recorded in `PROGRESS.md`. Passing this refinement does not complete T1.8, T1.9, T1.10, T2.1, T3.2, T3.6, or any launch/content gate.
 
+### P0.3 — Build a local learning content engine — COMPLETED
+
+- **Dependencies:** P0.2.1; explicit technical-founder authorization in the P0.3 local learning content engine instruction.
+- **Authority boundary:** Build only a reusable local, non-public prototype engine. It is not T2.1 or T3.1/T3.2/T3.6 completion and does not authorize a database, authentication, billing, analytics, tracking, participant research, production content, linguistic approval, audio, deployment, or publication of the draft German module.
+- **Acceptance criteria:** Define typed lesson, situation, phrase, exercise, feedback, review, locale, content-version, lifecycle, and audio-reference metadata; enforce `draft`, `reviewed`, `approved`, `published`, and `retired` transitions with fail-closed independent publication approvals; adapt the neutral English-only accommodation fixture without German translation/audio; render and evaluate reusable deterministic exercises with incomplete, correct, incorrect, completion, and restart states; isolate prototype fixtures from production content access; and preserve the existing accessible responsive Veyra lesson UI without unnecessary dependencies.
+- **Tests/checks:** Schema-validation, lifecycle-transition, independent-approval, unpublished-content-rejection, deterministic-scoring, and existing unit tests; complete local lesson browser flow at 320px and desktop with keyboard/state/network checks; format, lint, typecheck, production build, and `git diff --check`.
+- **Evidence:** Exact files, executed checks, results, lifecycle limits, local URL, and unresolved production/content/audio gates recorded in `PROGRESS.md`. Passing P0.3 does not complete T1.8, T1.9, T1.10, T2.1, T3.1, T3.2, T3.6, or any launch/content gate.
+
 ## 3. Phase 1 — decisions and discovery
 
 ### T1.1 — Resolve founder governance — IN PROGRESS
